@@ -99,19 +99,20 @@
 
 
 
-<meta name="description" content="仅为我们的内部使用 零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)初始化 在GitHub中创建一个repositorie 获取项目的URL地址 在服务器的网站根目录下创建git仓库git init 连接远程的刚刚建好的GitHub仓库git remote add origin 项目的URL常用的操作命令 git remote -v查看连接的远程仓库 git push or">
+<meta name="description" content="仅为我们的内部使用“github仓库地址” 零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)初始化 在GitHub中创建一个repositorie 获取项目的URL地址 在服务器的网站根目录下创建git仓库git init 连接远程的刚刚建好的GitHub仓库git remote add origin 项目的URL常用的操作命令 git remote -v查看连接的远程仓库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PhpStorm关联GitHub项目">
 <meta property="og:url" content="http://yoursite.com/2017/07/12/PhpStorm关联GitHub项目/index.html">
 <meta property="og:site_name" content="Jingtao">
-<meta property="og:description" content="仅为我们的内部使用 零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)初始化 在GitHub中创建一个repositorie 获取项目的URL地址 在服务器的网站根目录下创建git仓库git init 连接远程的刚刚建好的GitHub仓库git remote add origin 项目的URL常用的操作命令 git remote -v查看连接的远程仓库 git push or">
+<meta property="og:description" content="仅为我们的内部使用“github仓库地址” 零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)初始化 在GitHub中创建一个repositorie 获取项目的URL地址 在服务器的网站根目录下创建git仓库git init 连接远程的刚刚建好的GitHub仓库git remote add origin 项目的URL常用的操作命令 git remote -v查看连接的远程仓库">
 <meta property="og:image" content="http://yoursite.com/images/找到github关联选项.jpg">
 <meta property="og:image" content="http://yoursite.com/images/GitHub选择框.jpg">
 <meta property="og:image" content="http://yoursite.com/images/命令之间的区别.jpg">
-<meta property="og:updated_time" content="2017-07-12T13:44:03.000Z">
+<meta property="og:image" content="http://yoursite.com/images/本地回滚代码.jpg">
+<meta property="og:updated_time" content="2017-07-12T14:02:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PhpStorm关联GitHub项目">
-<meta name="twitter:description" content="仅为我们的内部使用 零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)初始化 在GitHub中创建一个repositorie 获取项目的URL地址 在服务器的网站根目录下创建git仓库git init 连接远程的刚刚建好的GitHub仓库git remote add origin 项目的URL常用的操作命令 git remote -v查看连接的远程仓库 git push or">
+<meta name="twitter:description" content="仅为我们的内部使用“github仓库地址” 零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)初始化 在GitHub中创建一个repositorie 获取项目的URL地址 在服务器的网站根目录下创建git仓库git init 连接远程的刚刚建好的GitHub仓库git remote add origin 项目的URL常用的操作命令 git remote -v查看连接的远程仓库">
 <meta name="twitter:image" content="http://yoursite.com/images/找到github关联选项.jpg">
 
 
@@ -383,7 +384,7 @@
       
 
       
-        <p><mark>仅为我们的内部使用</mark></p>
+        <p><mark>仅为我们的内部使用</mark><br><a href="https://github.com/QLsoftware/qlsoftware/" target="_blank" rel="external">“github仓库地址”</a></p>
 <h2 id="零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成"><a href="#零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成" class="headerlink" title="零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)"></a>零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
 <li>在GitHub中创建一个<code>repositorie</code></li>
 <li>获取项目的URL地址</li>
@@ -406,8 +407,13 @@
 <li>点击clone即可将项目下载到本地</li>
 </ul>
 <p><strong>项目已经初始化，请以Github上的作为标准</strong><br></p>
-<h2 id="三、本地与远程数据库之间的数据同步"><a href="#三、本地与远程数据库之间的数据同步" class="headerlink" title="三、本地与远程数据库之间的数据同步"></a>三、本地与远程数据库之间的数据同步</h2><ul>
-<li>在<code>/VCS/git</code>菜单下可以看见很多功能，这些功能之间的关系如图<img src="/images/命令之间的区别.jpg" alt="">.引用于<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">“Git远程操作详解”</a></li>
+<h2 id="三、本地与远程数据库之间的数据同步"><a href="#三、本地与远程数据库之间的数据同步" class="headerlink" title="三、本地与远程数据库之间的数据同步"></a>三、本地与远程数据库之间的数据同步</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p> 在<code>/VCS/git</code>菜单下可以看见很多功能，这些功能之间的关系如图<img src="/images/命令之间的区别.jpg" alt="">.引用于<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">“Git远程操作详解”</a></p>
+<h3 id="简单的总结"><a href="#简单的总结" class="headerlink" title="简单的总结"></a>简单的总结</h3><ul>
+<li><code>fetch</code>:用于更新自己的本地代码。将其他队员的提交，更新到自己的本地</li>
+<li><code>push</code>:将本地的代码提交到远程代码库，有两种选择，分支或者直接合并到master中(相当于直接更改)<mark>在push之前需要将代码commit，即将代码先放入本地仓库中</mark></li>
+<li><code>clone</code>:从远程代码库下载整个文件到本地<h3 id="补救方法"><a href="#补救方法" class="headerlink" title="补救方法"></a>补救方法</h3></li>
+<li>万一自己写的代码乱掉了，不要慌张，在项目上右键，找到<code>Local History</code> <code>Show History</code><img src="/images/本地回滚代码.jpg" alt="">，检查自己的操作记录，恢复自己的代码。</li>
+<li>还是多写点注释比较好，特别是在上传自己的代码的时候。多写注释，别惹队友手中的菜刀。</li>
 </ul>
 
       
@@ -593,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成"><span class="nav-number">1.</span> <span class="nav-text">零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的操作命令"><span class="nav-number">1.2.</span> <span class="nav-text">常用的操作命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、组队"><span class="nav-number">2.</span> <span class="nav-text">一、组队</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、从GitHub上下载项目"><span class="nav-number">3.</span> <span class="nav-text">二、从GitHub上下载项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、本地与远程数据库之间的数据同步"><span class="nav-number">4.</span> <span class="nav-text">三、本地与远程数据库之间的数据同步</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成"><span class="nav-number">1.</span> <span class="nav-text">零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的操作命令"><span class="nav-number">1.2.</span> <span class="nav-text">常用的操作命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、组队"><span class="nav-number">2.</span> <span class="nav-text">一、组队</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、从GitHub上下载项目"><span class="nav-number">3.</span> <span class="nav-text">二、从GitHub上下载项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、本地与远程数据库之间的数据同步"><span class="nav-number">4.</span> <span class="nav-text">三、本地与远程数据库之间的数据同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简述"><span class="nav-number">4.1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的总结"><span class="nav-number">4.2.</span> <span class="nav-text">简单的总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补救方法"><span class="nav-number">4.3.</span> <span class="nav-text">补救方法</span></a></li></ol></li></ol></div>
             
 
           </div>

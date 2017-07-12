@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-12T07:48:20.000Z</updated>
+  <updated>2017-07-12T14:02:30.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/07/12/UI%E7%BB%84%E5%BB%BA%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/"/>
     <id>http://yoursite.com/2017/07/12/UI组建的位置以及引用方式/</id>
     <published>2017-07-12T07:46:30.000Z</published>
-    <updated>2017-07-12T07:48:20.000Z</updated>
+    <updated>2017-07-12T14:02:30.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="使用的组件是Semantic-UI个人觉得比较能接受，大家谅解一下吧"><a href="#使用的组件是Semantic-UI个人觉得比较能接受，大家谅解一下吧" class="headerlink" title="使用的组件是Semantic UI个人觉得比较能接受，大家谅解一下吧"></a>使用的组件是Semantic UI<mark>个人觉得比较能接受，大家谅解一下吧</mark></h2><p>组件的官网</p>
 ]]></content>
@@ -41,9 +41,9 @@
     <link href="http://yoursite.com/2017/07/12/PhpStorm%E5%85%B3%E8%81%94GitHub%E9%A1%B9%E7%9B%AE/"/>
     <id>http://yoursite.com/2017/07/12/PhpStorm关联GitHub项目/</id>
     <published>2017-07-12T04:16:15.000Z</published>
-    <updated>2017-07-12T13:44:03.000Z</updated>
+    <updated>2017-07-12T14:02:37.000Z</updated>
     
-    <content type="html"><![CDATA[<p><mark>仅为我们的内部使用</mark></p>
+    <content type="html"><![CDATA[<p><mark>仅为我们的内部使用</mark><br><a href="https://github.com/QLsoftware/qlsoftware/" target="_blank" rel="external">“github仓库地址”</a></p>
 <h2 id="零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成"><a href="#零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成" class="headerlink" title="零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)"></a>零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
 <li>在GitHub中创建一个<code>repositorie</code></li>
 <li>获取项目的URL地址</li>
@@ -66,15 +66,20 @@
 <li>点击clone即可将项目下载到本地</li>
 </ul>
 <p><strong>项目已经初始化，请以Github上的作为标准</strong><br></p>
-<h2 id="三、本地与远程数据库之间的数据同步"><a href="#三、本地与远程数据库之间的数据同步" class="headerlink" title="三、本地与远程数据库之间的数据同步"></a>三、本地与远程数据库之间的数据同步</h2><ul>
-<li>在<code>/VCS/git</code>菜单下可以看见很多功能，这些功能之间的关系如图<img src="/images/命令之间的区别.jpg" alt="">.引用于<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">“Git远程操作详解”</a></li>
+<h2 id="三、本地与远程数据库之间的数据同步"><a href="#三、本地与远程数据库之间的数据同步" class="headerlink" title="三、本地与远程数据库之间的数据同步"></a>三、本地与远程数据库之间的数据同步</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p> 在<code>/VCS/git</code>菜单下可以看见很多功能，这些功能之间的关系如图<img src="/images/命令之间的区别.jpg" alt="">.引用于<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">“Git远程操作详解”</a></p>
+<h3 id="简单的总结"><a href="#简单的总结" class="headerlink" title="简单的总结"></a>简单的总结</h3><ul>
+<li><code>fetch</code>:用于更新自己的本地代码。将其他队员的提交，更新到自己的本地</li>
+<li><code>push</code>:将本地的代码提交到远程代码库，有两种选择，分支或者直接合并到master中(相当于直接更改)<mark>在push之前需要将代码commit，即将代码先放入本地仓库中</mark></li>
+<li><code>clone</code>:从远程代码库下载整个文件到本地<h3 id="补救方法"><a href="#补救方法" class="headerlink" title="补救方法"></a>补救方法</h3></li>
+<li>万一自己写的代码乱掉了，不要慌张，在项目上右键，找到<code>Local History</code> <code>Show History</code><img src="/images/本地回滚代码.jpg" alt="">，检查自己的操作记录，恢复自己的代码。</li>
+<li>还是多写点注释比较好，特别是在上传自己的代码的时候。多写注释，别惹队友手中的菜刀。</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;mark&gt;仅为我们的内部使用&lt;/mark&gt;&lt;/p&gt;
-&lt;h2 id=&quot;零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成&quot;&gt;&lt;a href=&quot;#零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成&quot; class=&quot;headerlink&quot;
+      &lt;p&gt;&lt;mark&gt;仅为我们的内部使用&lt;/mark&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/QLsoftware/qlsoftware/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;“github仓库地址”&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=
     
     </summary>
     
