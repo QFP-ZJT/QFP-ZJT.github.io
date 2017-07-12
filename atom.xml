@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jingtao</title>
+  <subtitle>Waiting for you!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-07-12T05:26:27.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Jingtao Zhang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PhpStorm关联GitHub项目</title>
+    <link href="http://yoursite.com/2017/07/12/PhpStorm%E5%85%B3%E8%81%94GitHub%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://yoursite.com/2017/07/12/PhpStorm关联GitHub项目/</id>
+    <published>2017-07-12T04:16:15.000Z</published>
+    <updated>2017-07-12T05:26:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如何在PhpStorm中关联gitHub项目"><a href="#如何在PhpStorm中关联gitHub项目" class="headerlink" title="如何在PhpStorm中关联gitHub项目"></a>如何在PhpStorm中关联gitHub项目</h1><h2 id="一、从GitHub上下载项目"><a href="#一、从GitHub上下载项目" class="headerlink" title="一、从GitHub上下载项目"></a>一、从GitHub上下载项目</h2><ul>
+<li>在PhpStorm中找到<code>/VCS/checkout from version control/Github</code>选项<img src="/images/找到github关联选项.jpg" alt=""></li>
+</ul>
+<ul>
+<li>在弹出的文本框中的<code>Git Repository URL</code>中填入<code>https://github.com/QFP-ZJT/qlsoftware.git</code>第二行选择存放于本地的哪个目录下，第三行为项目的名称，我们统一称为<code>qlsoftware</code>就可以了<img src="/images/GitHub选择框.jpg" alt=""></li>
+<li>点击clone即可将项目下载到本地</li>
+</ul>
+<p><strong>项目已经初始化，请以Github上的作为标准</strong></p>
+<h2 id="二、提交你的更改"><a href="#二、提交你的更改" class="headerlink" title="二、提交你的更改"></a>二、提交你的更改</h2><ul>
+<li>在PhpStorm中找到/VCS/Git/commit file<img src="/images/GitHub提交选项.jpg" alt=""></li>
+<li><img src="/images/提交前的准备.jpg" alt=""><strong>标号1</strong>为你所做出的更改的内容</li>
+</ul>
+<p><strong>标号2</strong>为填写你所更改的原因<mark><strong>大家一定要填写，方便管理需要备注上自己的姓名，否则查出来杀无赦</strong></mark></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;如何在PhpStorm中关联gitHub项目&quot;&gt;&lt;a href=&quot;#如何在PhpStorm中关联gitHub项目&quot; class=&quot;headerlink&quot; title=&quot;如何在PhpStorm中关联gitHub项目&quot;&gt;&lt;/a&gt;如何在PhpStorm中关联gitHub
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo使用姿势</title>
+    <link href="http://yoursite.com/2017/07/05/Hexo%E4%BD%BF%E7%94%A8%E5%A7%BF%E5%8A%BF/"/>
+    <id>http://yoursite.com/2017/07/05/Hexo使用姿势/</id>
+    <published>2017-07-05T12:40:02.000Z</published>
+    <updated>2017-07-06T14:36:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#比较的懒，简单的记一下吧</p>
+<h3 id="安装Next"><a href="#安装Next" class="headerlink" title="安装Next"></a>安装Next</h3><p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next官网</a><br></p>
+<h3 id="新建一个页面-例如目录"><a href="#新建一个页面-例如目录" class="headerlink" title="新建一个页面   例如目录"></a>新建一个页面   例如<code>目录</code><br></h3><p><code>hexo new page categories</code><br><br>编辑新生成的页面，将页面的类型设置为 categories ，主题将自动为这个页面显示所有分类。<br> <mark>最后的comments代表是否允许评论</mark></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">title: 分类</div><div class="line">date: 2014-12-22 12:39:04</div><div class="line">type: &quot;categories&quot;</div><div class="line">comments: false</div><div class="line">---</div></pre></td></tr></table></figure>
+<h3 id="Hexo图片的添加方法"><a href="#Hexo图片的添加方法" class="headerlink" title="Hexo图片的添加方法"></a>Hexo图片的添加方法</h3><p><em>添加图片放置的位置<code>/hexo/source/images/</code><br>
+</em>引用方式    <code>![&quot;图片描述&quot;(可以不写)](/images/smile01.gif)</code><br><br>*在执行<code>hexo g</code>命令的时候，hexo会自动将图片添加到<code>public/images</code>文件夹之中</p>
+<h3 id="Hexo音乐添加方式"><a href="#Hexo音乐添加方式" class="headerlink" title="Hexo音乐添加方式"></a>Hexo音乐添加方式</h3><p>直接添加如下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;center&gt;</div><div class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 </div><div class="line">	src=&quot;音乐地址&quot;&gt;</div><div class="line">&lt;/iframe&gt;	</div><div class="line">&lt;/center&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="Hexo-添加统计功能"><a href="#Hexo-添加统计功能" class="headerlink" title="Hexo 添加统计功能"></a>Hexo 添加统计功能</h3><p><a href="http://www.jeyzhang.com/hexo-next-add-post-views.html" target="_blank" rel="external">Hexo的NexT主题个性化：添加文章阅读量</a><br>尴尬<br><mark>亲测，失败了！</mark><br><br>又找到一个<a href="http://theme-next.iissnan.com/third-party-services.html#analytics-busuanzi" target="_blank" rel="external">第三方服务集成</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#比较的懒，简单的记一下吧&lt;/p&gt;
+&lt;h3 id=&quot;安装Next&quot;&gt;&lt;a href=&quot;#安装Next&quot; class=&quot;headerlink&quot; title=&quot;安装Next&quot;&gt;&lt;/a&gt;安装Next&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://theme-next.iissna
+    
+    </summary>
+    
+      <category term="Hexo搭建" scheme="http://yoursite.com/categories/Hexo%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用配置文件</title>
+    <link href="http://yoursite.com/2017/07/05/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    <id>http://yoursite.com/2017/07/05/常用配置文件/</id>
+    <published>2017-07-05T00:25:22.000Z</published>
+    <updated>2017-07-05T00:28:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>caddy 配置文件  文件位置<code>/usr/local/caddy/Caddyfile</code></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"> http://do.qingfengpiao.cn &#123;</div><div class="line"> root /root</div><div class="line"> timeouts none</div><div class="line"> gzip</div><div class="line"> basicauth / user  pass</div><div class="line"> filemanager / &#123;</div><div class="line">  show /root</div><div class="line">  user:</div><div class="line">  allow_new true</div><div class="line">  allow_edit true</div><div class="line">  allow_commands true</div><div class="line">  allow_command cp</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;caddy 配置文件  文件位置&lt;code&gt;/usr/local/caddy/Caddyfile&lt;/code&gt;&lt;/p&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div clas
+    
+    </summary>
+    
+      <category term="不安分的服务器" scheme="http://yoursite.com/categories/%E4%B8%8D%E5%AE%89%E5%88%86%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="配置文件" scheme="http://yoursite.com/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何让服务器实现自动做种功能</title>
+    <link href="http://yoursite.com/2017/07/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%81%9A%E7%A7%8D%E5%8A%9F%E8%83%BD/"/>
+    <id>http://yoursite.com/2017/07/04/如何让服务器实现自动做种功能/</id>
+    <published>2017-07-04T15:10:49.000Z</published>
+    <updated>2017-07-09T15:13:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="debian-实现自动做种"><a href="#debian-实现自动做种" class="headerlink" title="debian 实现自动做种"></a>debian 实现自动做种</h1><h2 id="一、安装Transmission"><a href="#一、安装Transmission" class="headerlink" title="一、安装Transmission"></a><mark>一、安装Transmission</mark></h2><p><code>apt-get update</code>  升级软件源<br><br><code>apt-get install transmission-daemon -y</code>  安装</p>
+<h2 id="二、配置Transmission"><a href="#二、配置Transmission" class="headerlink" title="二、配置Transmission"></a><mark>二、配置Transmission</mark></h2><p><code>/etc/init.d/transmission-daemon stop</code>关闭transmission<br></p>
+<p>修改配置文件，配置文件的位置<br><code>/var/lib/transmission-daemon/info/settings.json</code><br>将<code>rpc-whitelist-enabled</code>置为<code>false</code><br><br>将<code>rpc-authentication-required</code>置为<code>true</code><br><br>修改<code>rpc-username</code>(用户名)和<code>rpc-password</code>(密码)</p>
+<p><code>/etc/init.d/transmission-daemon start</code> 重启transmission</p>
+<h2 id="三、使用Transmission"><a href="#三、使用Transmission" class="headerlink" title="三、使用Transmission"></a><mark>三、使用Transmission</mark></h2><h3 id="1、通过浏览器访问服务器的9091端口即可"><a href="#1、通过浏览器访问服务器的9091端口即可" class="headerlink" title="1、通过浏览器访问服务器的9091端口即可"></a>1、通过浏览器访问服务器的<code>9091</code>端口即可<br></h3><h3 id="2、通过谷歌的软件Transmission-Remote远程连接"><a href="#2、通过谷歌的软件Transmission-Remote远程连接" class="headerlink" title="2、通过谷歌的软件Transmission Remote远程连接"></a>2、通过谷歌的软件<a href="https://play.google.com/store/apps/details?id=net.yupol.transmissionremote.app&amp;rdid=net.yupol.transmissionremote.app" target="_blank" rel="external">Transmission Remote</a>远程连接</h3><p>不过还是想吐槽一下，这个GUI提供的功能是真的少</p>
+<h2 id="四、拓展，使用Flexget实现自动化"><a href="#四、拓展，使用Flexget实现自动化" class="headerlink" title="四、拓展，使用Flexget实现自动化"></a><mark>四、拓展，使用Flexget实现自动化</mark></h2><p> <strong>功能：接受更新，发送到transmission与邮箱中</strong></p>
+<h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><p><code>sudo apt install python-pip</code> 安装Python包管理工具<br><br><code>pip install flexget</code>  安装软件<br></p>
+<h3 id="2、修改配置文件"><a href="#2、修改配置文件" class="headerlink" title="2、修改配置文件"></a>2、修改配置文件</h3><p>位置：<code>~/.flexget/config.yml</code>如果没有的话创建一个就好了<br><br>配置文件的基本格式  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">task:</div><div class="line">	rss: rss的地址</div><div class="line">	accept_all: yes</div><div class="line">	transmission:</div><div class="line">		host: localhost</div><div class="line">		port: 9091</div><div class="line">		username: 用户名</div><div class="line">		password: 密码</div><div class="line">	email:</div><div class="line">		active: true</div><div class="line">		from: 发件箱邮箱</div><div class="line">		to: 收件箱邮箱</div><div class="line">		smtp_host: smtp.gmail.com</div><div class="line">		smtp_port: 587</div><div class="line">		smtp_username: 发件邮箱</div><div class="line">		smtp_password: yourpassword</div><div class="line">		smtp_tls: true</div></pre></td></tr></table></figure>
+<p>如果不需要邮箱提示，则删掉邮箱部分即可</p>
+<p>PS: 由于用户权限之间问题，需要<br><code>chmod -R 777 /var/lib/transmission-daemon/downloads/</code><br>公开文件夹的权限</p>
+<h3 id="3、运行"><a href="#3、运行" class="headerlink" title="3、运行"></a>3、运行</h3><p><code>flexget --test excute</code> 测试配置文件是否正常工作<br><br><code>flexget --learn</code> rss中已经存在的集数不会下载</p>
+<h3 id="4、使用crontab制作定时任务"><a href="#4、使用crontab制作定时任务" class="headerlink" title="4、使用crontab制作定时任务"></a>4、使用crontab制作定时任务</h3><p><code>crontab -e</code>修改定时任务<br><br>新添加一行<code>*/2 * * * * /usr/local/bin/flexget --cron execute</code><br>每两分钟检查一下是否新的订阅，有的话交给transmission进行下载</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;debian-实现自动做种&quot;&gt;&lt;a href=&quot;#debian-实现自动做种&quot; class=&quot;headerlink&quot; title=&quot;debian 实现自动做种&quot;&gt;&lt;/a&gt;debian 实现自动做种&lt;/h1&gt;&lt;h2 id=&quot;一、安装Transmission&quot;&gt;&lt;a 
+    
+    </summary>
+    
+      <category term="不安分的服务器" scheme="http://yoursite.com/categories/%E4%B8%8D%E5%AE%89%E5%88%86%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="做种" scheme="http://yoursite.com/tags/%E5%81%9A%E7%A7%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇博客</title>
+    <link href="http://yoursite.com/2017/07/01/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2017/07/01/第一篇博客/</id>
+    <published>2017-07-01T15:32:57.000Z</published>
+    <updated>2017-07-04T16:12:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="熟悉Markdown编辑器"><a href="#熟悉Markdown编辑器" class="headerlink" title="熟悉Markdown编辑器"></a>熟悉Markdown编辑器</h1><p><strong>Markdown</strong> 貌似是一种很好用的编辑器，<em>好吧</em>，承认了主要是为了写博客的时候使用，但感觉还是很棒的！<br><a href="zjtao.me">个人主页</a></p>
+<p><strong>最近还没有通过备案，应该快了吧</strong></p>
+<p><strong>Markdown</strong>编辑器和html脚本语言还是蛮相似的</p>
+<p>例如<code>&lt;a name=&quot;page_1&quot;&gt;&lt;/a&gt; Page_1</code>来作为段落标示</p>
+<p>使用<code>[]()</code>添加链接的方式，快速索引，<em>Interesting！</em></p>
+<p><strong>Markdown</strong>的数学公式的书写方式.<a href="饮用的添加方式，还是很好用的">^math</a></p>
+<p>(1+1) </p>
+<p><math display="block"><br>    <msubsup><mi>A</mi> <mi>S</mi> <mi>T</mi></msubsup><br>    <mo>=</mo><br>    <mi>B</mi><br></math><br><em>有点麻烦，还是算了吧，用到的时候再去看看</em><br><em>貌似是没有加插件的原因，再说吧  比较懒</em></p>
+<p><strong>段落</strong></p>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<ol>
+<li>解释1</li>
+<li>解释2</li>
+</ol>
+<ul>
+<li>list1</li>
+<li>list2</li>
+</ul>
+<p><strong>表格</strong>的书写方式  <em>其实还是有点蒙</em></p>
+<table>
+<thead>
+<tr>
+<th>Option name</th>
+<th>Markup</th>
+<th>Result if enabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intra-word emphasis</td>
+<td>So A*maz*ing</td>
+<td>So A<em>maz</em>ing</td>
+<td></td>
+</tr>
+<tr>
+<td>Strikethrough</td>
+<td>~~Much wow~~</td>
+<td><del>Much wow</del></td>
+<td></td>
+</tr>
+<tr>
+<td>Underline [^under]</td>
+<td>_So doge_</td>
+<td><u>So doge</u></td>
+<td></td>
+</tr>
+<tr>
+<td>Quote [^quote]</td>
+<td>\”Such editor\”</td>
+<td><q>Such editor</q></td>
+<td></td>
+</tr>
+<tr>
+<td>Highlight</td>
+<td>\==So good\==</td>
+<td><mark>So good</mark></td>
+<td></td>
+</tr>
+<tr>
+<td>Superscript</td>
+<td>hoge\^(fuga)</td>
+<td>hoge<sup>fuga</sup></td>
+<td></td>
+</tr>
+<tr>
+<td>Autolink</td>
+<td><a href="http://t.co" target="_blank" rel="external">http://t.co</a></td>
+<td><a href="http://t.co" target="_blank" rel="external">http://t.co</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Footnotes</td>
+<td>[\^4] and [\^4]:</td>
+<td>[^4] and footnote 4</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>预祝自己学习快乐！</em></strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;熟悉Markdown编辑器&quot;&gt;&lt;a href=&quot;#熟悉Markdown编辑器&quot; class=&quot;headerlink&quot; title=&quot;熟悉Markdown编辑器&quot;&gt;&lt;/a&gt;熟悉Markdown编辑器&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Markdown&lt;/strong&gt; 
+    
+    </summary>
+    
+      <category term="软件使用" scheme="http://yoursite.com/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="编辑器适应" scheme="http://yoursite.com/tags/%E7%BC%96%E8%BE%91%E5%99%A8%E9%80%82%E5%BA%94/"/>
+    
+  </entry>
+  
+</feed>
