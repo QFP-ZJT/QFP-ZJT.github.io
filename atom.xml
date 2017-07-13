@@ -48,7 +48,7 @@
     <link href="http://yoursite.com/2017/07/12/PhpStorm%E5%85%B3%E8%81%94GitHub%E9%A1%B9%E7%9B%AE/"/>
     <id>http://yoursite.com/2017/07/12/PhpStorm关联GitHub项目/</id>
     <published>2017-07-12T04:16:15.000Z</published>
-    <updated>2017-07-12T15:03:38.000Z</updated>
+    <updated>2017-07-13T09:28:22.000Z</updated>
     
     <content type="html"><![CDATA[<p><mark>仅为我们的内部使用</mark><br><a href="https://github.com/QLsoftware/qlsoftware/" target="_blank" rel="external">“github仓库地址”</a><br><br><a href="123.206.82.51:81" target="_blank" rel="external">“在线测试地址”</a><strong>每一分钟刷新一次(提交最晚1分钟之后会生效)</strong></p>
 <h2 id="零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成"><a href="#零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成" class="headerlink" title="零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)"></a>零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
@@ -71,6 +71,7 @@
 <ul>
 <li>在弹出的文本框中的<code>Git Repository URL</code>中填入<code>https://github.com/QLsoftware/qlsoftware/</code>第二行选择存放于本地的哪个目录下，第三行为项目的名称，我们统一称为<code>qlsoftware</code>就可以了<img src="/images/GitHub选择框.jpg" alt=""></li>
 <li>点击clone即可将项目下载到本地</li>
+<li><mark>你可能遇到的问题:在下载过程中你可能会发现缺少一部分文件，这个时候，你只需要找到项目的根目录下，找到<code>.gitignore</code>文件，并清空里面的内容。问题应该就会解决</mark></li>
 </ul>
 <p><strong>项目已经初始化，请以Github上的作为标准</strong><br></p>
 <h2 id="三、本地与远程数据库之间的数据同步"><a href="#三、本地与远程数据库之间的数据同步" class="headerlink" title="三、本地与远程数据库之间的数据同步"></a>三、本地与远程数据库之间的数据同步</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p> 在<code>/VCS/git</code>菜单下可以看见很多功能，这些功能之间的关系如图<img src="/images/命令之间的区别.jpg" alt="">.引用于<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">“Git远程操作详解”</a></p>

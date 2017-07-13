@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://yoursite.com/images/GitHub选择框.jpg">
 <meta property="og:image" content="http://yoursite.com/images/命令之间的区别.jpg">
 <meta property="og:image" content="http://yoursite.com/images/本地回滚代码.jpg">
-<meta property="og:updated_time" content="2017-07-12T15:03:38.000Z">
+<meta property="og:updated_time" content="2017-07-13T09:28:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PhpStorm关联GitHub项目">
 <meta name="twitter:description" content="仅为我们的内部使用“github仓库地址”“在线测试地址”每一分钟刷新一次(提交最晚1分钟之后会生效) 零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)初始化 在GitHub中创建一个repositorie 获取项目的URL地址 在服务器的网站根目录下创建git仓库git init 连接远程的刚刚建好的GitHub仓库git remote add origin 项目的URL">
@@ -405,6 +405,7 @@
 <ul>
 <li>在弹出的文本框中的<code>Git Repository URL</code>中填入<code>https://github.com/QLsoftware/qlsoftware/</code>第二行选择存放于本地的哪个目录下，第三行为项目的名称，我们统一称为<code>qlsoftware</code>就可以了<img src="/images/GitHub选择框.jpg" alt=""></li>
 <li>点击clone即可将项目下载到本地</li>
+<li><mark>你可能遇到的问题:在下载过程中你可能会发现缺少一部分文件，这个时候，你只需要找到项目的根目录下，找到<code>.gitignore</code>文件，并清空里面的内容。问题应该就会解决</mark></li>
 </ul>
 <p><strong>项目已经初始化，请以Github上的作为标准</strong><br></p>
 <h2 id="三、本地与远程数据库之间的数据同步"><a href="#三、本地与远程数据库之间的数据同步" class="headerlink" title="三、本地与远程数据库之间的数据同步"></a>三、本地与远程数据库之间的数据同步</h2><h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p> 在<code>/VCS/git</code>菜单下可以看见很多功能，这些功能之间的关系如图<img src="/images/命令之间的区别.jpg" alt="">.引用于<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="external">“Git远程操作详解”</a></p>
