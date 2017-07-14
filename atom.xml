@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-12T14:38:56.000Z</updated>
+  <updated>2017-07-14T10:30:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>愿得一喵心，白首不分离</title>
+    <link href="http://yoursite.com/2017/07/14/%E6%84%BF%E5%BE%97%E4%B8%80%E4%BA%BA%E5%BF%83%EF%BC%8C%E7%99%BD%E9%A6%96%E4%B8%8D%E5%88%86%E7%A6%BB/"/>
+    <id>http://yoursite.com/2017/07/14/愿得一人心，白首不分离/</id>
+    <published>2017-07-14T10:11:37.000Z</published>
+    <updated>2017-07-14T10:30:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="家有萌猫，感觉自己要晋升铲屎官了"><a href="#家有萌猫，感觉自己要晋升铲屎官了" class="headerlink" title="家有萌猫，感觉自己要晋升铲屎官了"></a>家有萌猫，感觉自己要晋升铲屎官了</h1><p><img src="/images/娱乐/3738947401BD99C5E4130131B4E64E70.jpg" alt=""><br><img src="/images/娱乐/IMG_20170713_154331.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;家有萌猫，感觉自己要晋升铲屎官了&quot;&gt;&lt;a href=&quot;#家有萌猫，感觉自己要晋升铲屎官了&quot; class=&quot;headerlink&quot; title=&quot;家有萌猫，感觉自己要晋升铲屎官了&quot;&gt;&lt;/a&gt;家有萌猫，感觉自己要晋升铲屎官了&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/ima
+    
+    </summary>
+    
+      <category term="娱乐" scheme="http://yoursite.com/categories/%E5%A8%B1%E4%B9%90/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++基础</title>
+    <link href="http://yoursite.com/2017/07/14/C-%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2017/07/14/C-基础/</id>
+    <published>2017-07-14T02:13:56.000Z</published>
+    <updated>2017-07-14T02:15:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="指针的使用"><a href="#指针的使用" class="headerlink" title="指针的使用"></a>指针的使用</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;指针的使用&quot;&gt;&lt;a href=&quot;#指针的使用&quot; class=&quot;headerlink&quot; title=&quot;指针的使用&quot;&gt;&lt;/a&gt;指针的使用&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="算法导论" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>UI组建的位置以及引用方式</title>
