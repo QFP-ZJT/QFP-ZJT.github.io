@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-15T02:35:58.000Z</updated>
+  <updated>2017-08-02T07:48:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,82 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>操作系统课程设计</title>
+    <link href="http://yoursite.com/2017/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://yoursite.com/2017/08/02/操作系统课程设计/</id>
+    <published>2017-08-02T07:46:18.000Z</published>
+    <updated>2017-08-02T07:48:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="操作系统课程设计"><a href="#操作系统课程设计" class="headerlink" title="操作系统课程设计"></a>操作系统课程设计</h2><p>###准备</p>
+<ul>
+<li>下载源码<a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/Nachos/nachos-java.tar.gz" target="_blank" rel="external">源码包下载地址</a> <br>使用如下命令进行解压缩<code>tar zxvf nachos-java.tar.gz</code></li>
+<li>要求<code>JDK</code>版本1.5往后</li>
+<li>安装<code>GNU工具</code>就是让你可以运行<code>gmake</code>命令<br><br>如果你是windows 参考先安装<a href="http://sources.redhat.com/cygwin/mirrors.html" target="_blank" rel="external">Cygwin</a>,cygwin说白了就是一个在windows平台上运行的unix模拟环境，具体可以参考<a href="http://blog.sciencenet.cn/blog-281551-247335.html" target="_blank" rel="external">Cygwin是什么？</a>  <br><br><strong>是unix环境的忽视掉Cygwin吧</strong></li>
+<li>安装<code>Cross-Compiler</code><a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/" target="_blank" rel="external">参考网址</a>,选择合适的版本  <strong>待完成，因为<code>proj_1</code>还没有用到</strong></li>
+<li><code>编译</code>在<code>nachos/proj1</code>目录下，执行gmake命令，便会在<code>nachos/proj1</code>目录下生成<code>nachos</code>文件夹(里面包含了编译的结果)。</li>
+<li>运行，在<code>README</code>中的作者要求添加环境变量以便执行<code>nachos</code>命令来运行程序。但可能是OS系统的原因，尝试了很久，都没有运行成功。无奈只好看了在<code>nachos/bin/nachos</code>的源码，发现其实就是一个java命令<code>java nachos.machine.Machine</code>(源码中还包含一些其他的命令，经google发现是更改命令行设置的一些命令，所以应该是无关紧要的)<br><br>说了这么多废话，就简单一句，不想设置环境变量的话，就在<code>nachos/proj1</code>文件夹下直接执行<code>java nachos.machine.Machine</code>就可以运行程序，参数可以直接写在后面(当然需要先编译<code>gmake</code>)</li>
+</ul>
+<p><strong>官方文档里面给出了使用Eclipse的方法</strong></p>
+<ul>
+<li>先准备一个名为cs_162的文件夹，然后把解压好的<code>nachos</code>源码放进去，在Eclipse里面创建一个新的<code>Java Project</code>命名为<code>cs_162</code>,不使用默认位置,选择刚才新建的文件夹<code>cs_162</code>.然后点击<code>Finish</code>创建完成</li>
+</ul>
+<p>###命令行参数解释</p>
+<ol>
+<li><p><code>-d &lt;debug flags&gt;</code>启用一些调试标志，具体参数为<br></p>
+<p> c: COFF loader info<br> i: HW interrupt controller info (终端控制信息)<br> p: processor info (进程信息)<br> m: disassembly<br> M: more disassembly<br> t: thread info (线程信息)<br> a: process info (formerly “address space”, hence a)<br>使用实例 <code>nachos -d ac</code>  监视 coff info and process info</p>
+</li>
+<li><p><code>-h</code>打印帮助信息</p>
+</li>
+<li><code>-s &lt;seed&gt;</code>制定随机生成数的种子，干涉随机生成数的生成</li>
+<li><code>-x &lt;program&gt;</code>指定程序给<code>UserKernel.run()</code>运行，而不是听从配置文件的</li>
+<li><code>-z</code>打印<code>copyright</code>信息，可惜在中国，根本用不到。<br><em>不是我说的，捂嘴</em></li>
+<li><code>-# &lt;grader arguments&gt;</code> 没搞明白</li>
+<li><code>-[] &lt;config file&gt;</code>重新制定配置文件</li>
+</ol>
+<p>###配置文件参数解释</p>
+<ol>
+<li><p>Machine.stubFileSystem:是否使用<a href="https://en.wikipedia.org/wiki/Stub_file" target="_blank" rel="external">stubfile</a>文件管理系统</p>
+</li>
+<li><p>Machine.processor:是否使用MIPS程序(貌似就是那个跨平台编译器)只有<code>proj1</code>不使用,其余的均使用为<code>true</code></p>
+</li>
+<li><p>Machine.console:是否需要控制台，好吧，只有<code>proj1</code>不需要</p>
+</li>
+<li><p>Machine.disk:是否提供仿真的磁盘，都不需要</p>
+</li>
+<li><p>ElevatorBank.allowElevatorGUI:是否提供GUI界面<br><em><code>README</code>里说考试的时候不能打开GUI,嗯就是这个样子的</em></p>
+</li>
+<li><p>NachosSecurityManager.fullySecure:安全<br><em><code>README</code>里面的意思是防止考试作弊</em></p>
+</li>
+<li><p>Kernel.kernel:指定加载那一个内核类英文解释更清楚<br><br> For proj1, this is nachos.threads.ThreadedKernel.<br><br> For proj2, this should be nachos.userprog.UserKernel. <br><br> For proj3, nachos.vm.VMKernel. <br><br> For proj4, nachos.network.NetKernel.</p>
+</li>
+<li><p>Processor.usingTLB:指定MIPS程序是否提供一个page table<br> interface 或者一个 TLB interface.感觉还是英文好理解一点: <br><br> In page table mode (proj2), the processor accesses an arbitrarily large kernel data structure to do address translation. In TLB mode (proj3 and proj4), the processor maintains a small TLB (4 entries).</p>
+</li>
+<li><p>Processor.numPhysPages:页的多少。一页1k，一般需要64k。在proj3中可能会变小，来测试是否会崩溃</p>
+</li>
+</ol>
+<h3 id="任务一-proj1"><a href="#任务一-proj1" class="headerlink" title="任务一(proj1)"></a>任务一(proj1)</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;操作系统课程设计&quot;&gt;&lt;a href=&quot;#操作系统课程设计&quot; class=&quot;headerlink&quot; title=&quot;操作系统课程设计&quot;&gt;&lt;/a&gt;操作系统课程设计&lt;/h2&gt;&lt;p&gt;###准备&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载源码&lt;a href=&quot;http://www-ins
+    
+    </summary>
+    
+      <category term="操作系统课设" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E8%AE%BE/"/>
+    
+    
+      <category term="Nachos" scheme="http://yoursite.com/tags/Nachos/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Laravel命令行工具</title>
     <link href="http://yoursite.com/2017/07/15/Laravel%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/"/>
     <id>http://yoursite.com/2017/07/15/Laravel命令行工具/</id>
     <published>2017-07-15T02:04:04.000Z</published>
-    <updated>2017-07-15T02:35:58.000Z</updated>
+    <updated>2017-07-16T22:47:59.000Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>Laravel composer安装<br>composer 安装框架：<br><code>composer create-project larval-caravel —prefer-dost</code><br></li>
@@ -76,7 +147,7 @@
     <link href="http://yoursite.com/2017/07/14/C-%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursite.com/2017/07/14/C-基础/</id>
     <published>2017-07-14T02:13:56.000Z</published>
-    <updated>2017-07-14T02:15:17.000Z</updated>
+    <updated>2017-07-15T11:56:03.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="指针的使用"><a href="#指针的使用" class="headerlink" title="指针的使用"></a>指针的使用</h2>]]></content>
     
@@ -98,7 +169,7 @@
     <link href="http://yoursite.com/2017/07/12/UI%E7%BB%84%E5%BB%BA%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/"/>
     <id>http://yoursite.com/2017/07/12/UI组建的位置以及引用方式/</id>
     <published>2017-07-12T07:46:30.000Z</published>
-    <updated>2017-07-12T14:38:56.000Z</updated>
+    <updated>2017-07-15T11:56:05.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="使用的组件是Semantic-UI个人觉得比较能接受，大家谅解一下吧"><a href="#使用的组件是Semantic-UI个人觉得比较能接受，大家谅解一下吧" class="headerlink" title="使用的组件是Semantic UI个人觉得比较能接受，大家谅解一下吧"></a>使用的组件是Semantic UI<mark><br>个人觉得比较能接受，大家谅解一下吧</mark></h2><ul>
 <li><a href="http://www.semantic-ui-cn.com/" target="_blank" rel="external">“组件的官网”</a></li>
