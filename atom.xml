@@ -216,9 +216,9 @@
     <link href="http://yoursite.com/2017/07/12/PhpStorm%E5%85%B3%E8%81%94GitHub%E9%A1%B9%E7%9B%AE/"/>
     <id>http://yoursite.com/2017/07/12/PhpStorm关联GitHub项目/</id>
     <published>2017-07-12T04:16:15.000Z</published>
-    <updated>2017-07-13T09:28:22.000Z</updated>
+    <updated>2017-09-04T16:30:38.000Z</updated>
     
-    <content type="html"><![CDATA[<p><mark>仅为我们的内部使用</mark><br><a href="https://github.com/QLsoftware/qlsoftware/" target="_blank" rel="external">“github仓库地址”</a><br><br><a href="123.206.82.51:81" target="_blank" rel="external">“在线测试地址”</a><strong>每一分钟刷新一次(提交最晚1分钟之后会生效)</strong></p>
+    <content type="html"><![CDATA[<p><mark>仅为我们的内部使用</mark><br><a href="https://github.com/QLsoftware/qlsoftware/" target="_blank" rel="external">github仓库地址</a><br><br><a href="123.206.82.51:81" target="_blank" rel="external">在线测试地址</a><strong>每一分钟刷新一次(提交最晚1分钟之后会生效)</strong><br><a href="http://do.zjtao.me/forums/discussion/education/%E8%A7%A3%E5%86%B3GitHub%E5%90%88%E5%B9%B6%E9%97%AE%E9%A2%98" target="_blank" rel="external">“多人合作方式更新到此”</a></p>
 <h2 id="零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成"><a href="#零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成" class="headerlink" title="零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)"></a>零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
 <li>在GitHub中创建一个<code>repositorie</code></li>
 <li>获取项目的URL地址</li>
@@ -257,7 +257,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;mark&gt;仅为我们的内部使用&lt;/mark&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/QLsoftware/qlsoftware/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;“github仓库地址”&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a h
+      &lt;p&gt;&lt;mark&gt;仅为我们的内部使用&lt;/mark&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/QLsoftware/qlsoftware/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github仓库地址&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a hre
     
     </summary>
     
