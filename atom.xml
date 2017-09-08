@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-05T10:00:24.000Z</updated>
+  <updated>2017-09-08T13:30:41.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/08/02/操作系统课程设计/</id>
     <published>2017-08-02T07:46:18.000Z</published>
-    <updated>2017-09-05T10:00:24.000Z</updated>
+    <updated>2017-09-08T13:30:41.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
 <li>下载源码<a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/Nachos/nachos-java.tar.gz" target="_blank" rel="external">源码包下载地址</a> <br>使用如下命令进行解压缩<code>tar zxvf nachos-java.tar.gz</code></li>
@@ -157,8 +157,7 @@
 <li>The Lock class does not need to be modified.</li>
 </ol>
 <h5 id="实验要求-4"><a href="#实验要求-4" class="headerlink" title="实验要求"></a>实验要求</h5><p>Nachos系统已经提供了一个简单的轮转调度器，采用简单的FIFO队列进行调度。优先级调度的传统如下: 每个线程拥有一个优先级(在Nachos中, 优先级是一个0到7之间的整数, 默认为1 。在线程调度时, 调度程序选择一个拥有最高优先级的处于就绪状态的线程运行。算法首先要在线程对象中完成对线程优先级修改的函数的实现，方便后面设置修改线程优先级完成试验的过程。</p>
-<p>##### </p>
-]]></content>
+<h5 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h5>]]></content>
     
     <summary type="html">
     
@@ -226,56 +225,6 @@
     </summary>
     
       <category term="娱乐" scheme="http://yoursite.com/categories/%E5%A8%B1%E4%B9%90/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>C++基础</title>
-    <link href="http://yoursite.com/2017/07/14/C-%E5%9F%BA%E7%A1%80/"/>
-    <id>http://yoursite.com/2017/07/14/C-基础/</id>
-    <published>2017-07-14T02:13:56.000Z</published>
-    <updated>2017-07-15T11:56:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="指针的使用"><a href="#指针的使用" class="headerlink" title="指针的使用"></a>指针的使用</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;指针的使用&quot;&gt;&lt;a href=&quot;#指针的使用&quot; class=&quot;headerlink&quot; title=&quot;指针的使用&quot;&gt;&lt;/a&gt;指针的使用&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="算法导论" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/"/>
-    
-    
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UI组建的位置以及引用方式</title>
-    <link href="http://yoursite.com/2017/07/12/UI%E7%BB%84%E5%BB%BA%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%BB%A5%E5%8F%8A%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/"/>
-    <id>http://yoursite.com/2017/07/12/UI组建的位置以及引用方式/</id>
-    <published>2017-07-12T07:46:30.000Z</published>
-    <updated>2017-07-15T11:56:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="使用的组件是Semantic-UI个人觉得比较能接受，大家谅解一下吧"><a href="#使用的组件是Semantic-UI个人觉得比较能接受，大家谅解一下吧" class="headerlink" title="使用的组件是Semantic UI个人觉得比较能接受，大家谅解一下吧"></a>使用的组件是Semantic UI<mark><br>个人觉得比较能接受，大家谅解一下吧</mark></h2><ul>
-<li><a href="http://www.semantic-ui-cn.com/" target="_blank" rel="external">“组件的官网”</a></li>
-<li><code>semantic.min.css</code> 文件所在的位置为<code>public/CSS</code>文件夹下，引用时，public文件夹类似于根目录，例如：<figure class="highlight plain"><figcaption><span>rel="stylesheet" href="/css/semantic.min.css">```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* `semantic.min.js`文件和`jquery.js`文件均位于`public/JS`文件夹下，引用时，与上面所述类似</div></pre></td></tr></table></figure></li>
-</ul>
-<p><script type="text/javascript" src="/js/jquery.min.js"></script></p>
-<p><script type="text/javascript" src="/js/semantic.min.js"></script></p>
-<p><script type="text/javascript" src="/js/header.js"></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;mark&gt;注意顺序，当时栽过&lt;/mark&gt;&lt;br&gt;</div><div class="line">*header.js为自己所使用的文件夹，建议每个队员都多建立自己的文件夹，将文件放到自己的文件夹下*</div><div class="line">##blade模板简介</div><div class="line">* blade模板为编写界面提供了很多方便。例如：</div></pre></td></tr></table></figure></p>
-<p>```</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;使用的组件是Semantic-UI个人觉得比较能接受，大家谅解一下吧&quot;&gt;&lt;a href=&quot;#使用的组件是Semantic-UI个人觉得比较能接受，大家谅解一下吧&quot; class=&quot;headerlink&quot; title=&quot;使用的组件是Semantic UI个人觉得比较能
-    
-    </summary>
-    
-      <category term="齐鲁软件大赛" scheme="http://yoursite.com/categories/%E9%BD%90%E9%B2%81%E8%BD%AF%E4%BB%B6%E5%A4%A7%E8%B5%9B/"/>
     
     
   </entry>
@@ -367,31 +316,6 @@
   </entry>
   
   <entry>
-    <title>常用配置文件</title>
-    <link href="http://yoursite.com/2017/07/05/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-    <id>http://yoursite.com/2017/07/05/常用配置文件/</id>
-    <published>2017-07-05T00:25:22.000Z</published>
-    <updated>2017-09-04T13:02:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>caddy 配置文件  文件位置<code>/usr/local/caddy/Caddyfile</code></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"> http://do.qingfengpiao.cn &#123;</div><div class="line"> root /root</div><div class="line"> timeouts none</div><div class="line"> gzip</div><div class="line"> basicauth / user  pass</div><div class="line"> filemanager / &#123;</div><div class="line">  show /root</div><div class="line">  user:</div><div class="line">  allow_new true</div><div class="line">  allow_edit true</div><div class="line">  allow_commands true</div><div class="line">  allow_command cp</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;caddy 配置文件  文件位置&lt;code&gt;/usr/local/caddy/Caddyfile&lt;/code&gt;&lt;/p&gt;
- &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div clas
-    
-    </summary>
-    
-      <category term="不安分的服务器" scheme="http://yoursite.com/categories/%E4%B8%8D%E5%AE%89%E5%88%86%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    
-      <category term="配置文件" scheme="http://yoursite.com/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>如何让服务器实现自动做种功能</title>
     <link href="http://yoursite.com/2017/07/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%81%9A%E7%A7%8D%E5%8A%9F%E8%83%BD/"/>
     <id>http://yoursite.com/2017/07/04/如何让服务器实现自动做种功能/</id>
@@ -423,109 +347,6 @@
     
     
       <category term="做种" scheme="http://yoursite.com/tags/%E5%81%9A%E7%A7%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一篇博客</title>
-    <link href="http://yoursite.com/2017/07/01/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2017/07/01/第一篇博客/</id>
-    <published>2017-07-01T15:32:57.000Z</published>
-    <updated>2017-07-04T16:12:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="熟悉Markdown编辑器"><a href="#熟悉Markdown编辑器" class="headerlink" title="熟悉Markdown编辑器"></a>熟悉Markdown编辑器</h1><p><strong>Markdown</strong> 貌似是一种很好用的编辑器，<em>好吧</em>，承认了主要是为了写博客的时候使用，但感觉还是很棒的！<br><a href="zjtao.me">个人主页</a></p>
-<p><strong>最近还没有通过备案，应该快了吧</strong></p>
-<p><strong>Markdown</strong>编辑器和html脚本语言还是蛮相似的</p>
-<p>例如<code>&lt;a name=&quot;page_1&quot;&gt;&lt;/a&gt; Page_1</code>来作为段落标示</p>
-<p>使用<code>[]()</code>添加链接的方式，快速索引，<em>Interesting！</em></p>
-<p><strong>Markdown</strong>的数学公式的书写方式.<a href="饮用的添加方式，还是很好用的">^math</a></p>
-<p>(1+1) </p>
-<p><math display="block"><br>    <msubsup><mi>A</mi> <mi>S</mi> <mi>T</mi></msubsup><br>    <mo>=</mo><br>    <mi>B</mi><br></math><br><em>有点麻烦，还是算了吧，用到的时候再去看看</em><br><em>貌似是没有加插件的原因，再说吧  比较懒</em></p>
-<p><strong>段落</strong></p>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<ol>
-<li>解释1</li>
-<li>解释2</li>
-</ol>
-<ul>
-<li>list1</li>
-<li>list2</li>
-</ul>
-<p><strong>表格</strong>的书写方式  <em>其实还是有点蒙</em></p>
-<table>
-<thead>
-<tr>
-<th>Option name</th>
-<th>Markup</th>
-<th>Result if enabled</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Intra-word emphasis</td>
-<td>So A*maz*ing</td>
-<td>So A<em>maz</em>ing</td>
-<td></td>
-</tr>
-<tr>
-<td>Strikethrough</td>
-<td>~~Much wow~~</td>
-<td><del>Much wow</del></td>
-<td></td>
-</tr>
-<tr>
-<td>Underline [^under]</td>
-<td>_So doge_</td>
-<td><u>So doge</u></td>
-<td></td>
-</tr>
-<tr>
-<td>Quote [^quote]</td>
-<td>\”Such editor\”</td>
-<td><q>Such editor</q></td>
-<td></td>
-</tr>
-<tr>
-<td>Highlight</td>
-<td>\==So good\==</td>
-<td><mark>So good</mark></td>
-<td></td>
-</tr>
-<tr>
-<td>Superscript</td>
-<td>hoge\^(fuga)</td>
-<td>hoge<sup>fuga</sup></td>
-<td></td>
-</tr>
-<tr>
-<td>Autolink</td>
-<td><a href="http://t.co" target="_blank" rel="external">http://t.co</a></td>
-<td><a href="http://t.co" target="_blank" rel="external">http://t.co</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Footnotes</td>
-<td>[\^4] and [\^4]:</td>
-<td>[^4] and footnote 4</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong><em>预祝自己学习快乐！</em></strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;熟悉Markdown编辑器&quot;&gt;&lt;a href=&quot;#熟悉Markdown编辑器&quot; class=&quot;headerlink&quot; title=&quot;熟悉Markdown编辑器&quot;&gt;&lt;/a&gt;熟悉Markdown编辑器&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Markdown&lt;/strong&gt; 
-    
-    </summary>
-    
-      <category term="软件使用" scheme="http://yoursite.com/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="编辑器适应" scheme="http://yoursite.com/tags/%E7%BC%96%E8%BE%91%E5%99%A8%E9%80%82%E5%BA%94/"/>
     
   </entry>
   
