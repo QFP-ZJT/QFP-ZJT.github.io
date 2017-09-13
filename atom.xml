@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-11T01:04:35.000Z</updated>
+  <updated>2017-09-13T05:07:29.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/08/02/操作系统课程设计/</id>
     <published>2017-08-02T07:46:18.000Z</published>
-    <updated>2017-09-11T01:04:35.000Z</updated>
+    <updated>2017-09-13T05:07:29.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
 <li>下载源码<a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/Nachos/nachos-java.tar.gz" target="_blank" rel="external">源码包下载地址</a> <br>使用如下命令进行解压缩<code>tar zxvf nachos-java.tar.gz</code></li>
@@ -37,12 +37,13 @@
 </ul>
 <h3 id="命令行参数解释"><a href="#命令行参数解释" class="headerlink" title="命令行参数解释"></a>命令行参数解释</h3><ol>
 <li><p><code>-d &lt;debug flags&gt;</code>启用一些调试标志，具体参数为<br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">c: COFF loader info </div><div class="line">   i: HW interrupt controller info (终端控制信息)</div><div class="line">   p: processor info (进程信息)</div><div class="line">   m: disassembly </div><div class="line">   M: more disassembly  </div><div class="line">   t: thread info (线程信息)</div><div class="line">   a: process info (formerly &quot;address space&quot;, hence a)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">c: COFF loader info (在COFF类中) </div><div class="line">   i: HW interrupt controller info (中断控制信息)</div><div class="line">   p: processor info (进程信息)</div><div class="line">   m: disassembly (汇编指令信息)</div><div class="line">   M: more disassembly  (汇编指令信息)</div><div class="line">   t: thread info (线程信息)</div><div class="line">   a: process info (formerly &quot;address space&quot;, hence a)</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>使用实例 <code>nachos -d ac</code>  监视 coff info and process info</p>
 <ol>
 <li><code>-h</code>打印帮助信息</li>
+<li><code>-m</code>Specify how many physical pages of memory to simulate</li>
 <li><code>-s &lt;seed&gt;</code>制定随机生成数的种子，干涉随机生成数的生成</li>
 <li><code>-x &lt;program&gt;</code>指定程序给<code>UserKernel.run()</code>运行，而不是听从配置文件的</li>
 <li><code>-z</code>打印<code>copyright</code>信息，可惜在中国，根本用不到。<br><em>不是我说的，捂嘴</em></li>
@@ -71,9 +72,16 @@
 </ol>
 <h3 id="生成nachos的文档"><a href="#生成nachos的文档" class="headerlink" title="生成nachos的文档"></a>生成<code>nachos</code>的文档</h3><p>在<code>nachos</code>目录下，执行命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir ../doc</div><div class="line">gmake doc</div></pre></td></tr></table></figure>
-<p>在<code>../doc</code>目录下，就能看见index.html,浏览器打来有惊喜</p>
-<h3 id="源代码理解"><a href="#源代码理解" class="headerlink" title="源代码理解"></a>源代码理解</h3><p>#### </p>
-<h3 id="任务一-proj1-建立线程系统"><a href="#任务一-proj1-建立线程系统" class="headerlink" title="任务一(proj1):建立线程系统"></a>任务一(proj1):建立线程系统</h3><p><strong>任务列表:</strong></p>
+<p>在<code>../doc</code>目录下，就能看见index.html,浏览器打开有惊喜</p>
+<h3 id="源代码理解"><a href="#源代码理解" class="headerlink" title="源代码理解"></a>源代码理解</h3><h4 id="For-Proj1"><a href="#For-Proj1" class="headerlink" title="For Proj1"></a>For Proj1</h4><h5 id="创建的设备-interrupt-amp-amp-timer"><a href="#创建的设备-interrupt-amp-amp-timer" class="headerlink" title="创建的设备: interrupt &amp;&amp; timer"></a>创建的设备: <code>interrupt</code> &amp;&amp; <code>timer</code></h5><h6 id="interrupt"><a href="#interrupt" class="headerlink" title="interrupt:"></a>interrupt:</h6><ul>
+<li>允许接收中断请求,将中断请求存储于队列中</li>
+<li>中断请求需要的参数: time 在中断服务器中想要呆的时间<br> type 给中断一个名字 <br> handler =&gt; ‘设备时间处理程序’ runnable的对象</li>
+</ul>
+<h6 id="timer"><a href="#timer" class="headerlink" title="timer"></a>timer</h6><ul>
+<li>向中断请求控制器中添加中断请求，等待设定的时间和中断处理程序(该处理程序又会重新将中断请求送入中断请求控制器中，并执行指定的handler程序)    从而实现每TimerTicks被唤醒一次</li>
+<li>所以在Alarm中可以这么用</li>
+</ul>
+<h4 id="For-Proj2"><a href="#For-Proj2" class="headerlink" title="For Proj2"></a>For Proj2</h4><h5 id="文件的copy-文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭"><a href="#文件的copy-文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭" class="headerlink" title="文件的copy() 文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭"></a>文件的copy() 文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭</h5><h3 id="任务一-proj1-建立线程系统"><a href="#任务一-proj1-建立线程系统" class="headerlink" title="任务一(proj1):建立线程系统"></a>任务一(proj1):建立线程系统</h3><p><strong>任务列表:</strong></p>
 <ul>
 <li>实现 Nachos 中 Kthread 类的 john()方法</li>
 <li>利用互斥锁直接实现条件变量</li>
@@ -92,8 +100,8 @@
 </ol>
 <h5 id="自己理解"><a href="#自己理解" class="headerlink" title="自己理解"></a>自己理解</h5><ul>
 <li>join()方法的作用是让另一个线程运行，直到另一个线程运行完毕之后再继续运行自己</li>
-<li>join()方法的原理: <br> 首先一个线程A调用join()方法是为了让另一个线程B执行，所以该线程首先会查看自身是否处于运行结束的状态，若线程A处于结束状态则join()方法没有意义直接退出<br>若A不处于结束状态，且A是第一次调用join()，则将线程A添加到B的joinqueue队列中，在B调用finish()方法时，检查自己的joinqueue队列，并将它们添加到就绪队列中</li>
-<li>疑惑:当前正在运行的线程被中断在哪里被加入了就绪队列？？    解答:参见<code>yield()</code>方法</li>
+<li>join()方法的原理: <br> 首先一个线程A调用join()方法是为了让另一个线程B执行，所以该线程首先会查看自身是否处于运行结束的状态，若线程A处于结束状态则join()方法没有意义直接退出<br>若A不处于结束状态，且A是第一次调用join()，则将线程A添加到B的joinqueue队列中，在B执行完,调用finish()方法时，检查自己的joinqueue队列，并将A添加到就绪队列中</li>
+<li>疑惑:当前正在运行的线程被中断在哪里被重新加入了就绪队列？？ <br> 解答:参见<code>yield()</code>方法</li>
 </ul>
 <h5 id="join方法的代码"><a href="#join方法的代码" class="headerlink" title="join方法的代码"></a>join方法的代码</h5><p><strong>添加了 ThreadQueue<code>joinQueue</code>与 boolean <code>isjoined</code>的参数</strong><br><br>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/KThread.java" target="_blank" rel="external">P1 T1</a></p>
 <h5 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/KThread.java" target="_blank" rel="external">P1 T1</a><br><strong>为了运行测试代码，请在<code>threads/ThreadedKernel.java</code>文件的<code>selfTest()</code>方法中添加<code>KThread.selfTest();</code></strong></p>
@@ -130,7 +138,6 @@
 <li>若被加入了等待队列，只能等待释放锁的线程唤醒。</li>
 <li>若线程执行了<code>condition.sleep()</code>当前线程释放锁，并进入等待队列，在重新获得执行机会时，首先申请获得锁<code>lock.acquire();</code></li>
 <li>当线程执行<code>wake()</code>方法时将等待队列的头线程放入就绪队列。同理<code>wakeall()</code></li>
-<li>疑惑: 继承P1 T1;</li>
 </ul>
 <h5 id="condition2代码"><a href="#condition2代码" class="headerlink" title="condition2代码"></a>condition2代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/Condition2.java" target="_blank" rel="external">P1 T2</a></p>
 <h5 id="测试代码-1"><a href="#测试代码-1" class="headerlink" title="测试代码"></a>测试代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/Condition2.java" target="_blank" rel="external">P1 T2</a><br><strong>为了运行测试代码，请在<code>threads/ThreadedKernel.java</code>文件的<code>selfTest()</code>方法中添加<code>Condition2.selfTest();</code></strong></p>
@@ -151,7 +158,7 @@
 </ol>
 <h5 id="自己理解-2"><a href="#自己理解-2" class="headerlink" title="自己理解"></a>自己理解</h5><ul>
 <li>一个线程想自己睡一会儿，告诉alarm自己要睡多久，然后alarm算出来应该唤醒该线程的时间，将其加入一个按唤醒时间从小到大排列的队列中，然后线程<code>sleep()</code></li>
-<li>alarm有一个总是被时钟间隔一段就唤醒的方法<code>timerInterrupt()</code>,该方法，会检查有申请睡觉的线程队列，若空，<code>return()</code>,否则从最早应该叫醒的线程开始唤醒，直到检查到不应该被唤醒的线程(加入就绪队列)，退出</li>
+<li>alarm有一个总是被时钟间隔一段就唤醒的方法<code>timerInterrupt()</code>,该方法，会检查申请睡觉的线程队列，若空，<code>return()</code>,否则从最早应该叫醒的线程开始唤醒(加入就绪队列)，直到检查到不应该被唤醒的线程，退出</li>
 </ul>
 <h5 id="waitUntil-代码"><a href="#waitUntil-代码" class="headerlink" title="waitUntil()代码"></a>waitUntil()代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/Alarm.java" target="_blank" rel="external">P1 T2</a></p>
 <h5 id="测试代码-2"><a href="#测试代码-2" class="headerlink" title="测试代码"></a>测试代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/Alarm.java" target="_blank" rel="external">P1 T2</a><br><strong>为了运行测试代码，请在<code>threads/ThreadedKernel.java</code>文件的<code>selfTest()</code>方法中添加<code>Alarm.selfTest();</code></strong></p>
