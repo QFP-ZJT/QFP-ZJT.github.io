@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-13T05:07:29.000Z</updated>
+  <updated>2017-09-19T03:21:26.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,79 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算机组成原理课程设计</title>
+    <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
+    <published>2017-09-19T02:34:26.000Z</published>
+    <updated>2017-09-19T03:21:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计"><a href="#计算机组成原理课程设计" class="headerlink" title="计算机组成原理课程设计"></a>计算机组成原理课程设计</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
+<li>ROM:256<em>8</em>3</li>
+<li>RAM:256*8</li>
+</ol>
+<h3 id="设计方案"><a href="#设计方案" class="headerlink" title="设计方案"></a>设计方案</h3><h4 id="硬件组成部分"><a href="#硬件组成部分" class="headerlink" title="硬件组成部分"></a>硬件组成部分</h4><h5 id="CPU内部"><a href="#CPU内部" class="headerlink" title="CPU内部:"></a>CPU内部:</h5><ol>
+<li>节拍发生器(分为大节拍和小节拍 暂定4个小节拍刺激一个大节拍)</li>
+<li>寄存器组(包括固定的PC,IR,MAR,MDR寄存器)</li>
+<li>CU(指令译码与微程序实现)</li>
+<li>ALU模块</li>
+<li>总线</li>
+</ol>
+<h5 id="CPU外部"><a href="#CPU外部" class="headerlink" title="CPU外部"></a>CPU外部</h5><ol>
+<li>ROM(存储微程序)</li>
+<li>RAM(指令与数据)</li>
+</ol>
+<h4 id="运行步骤"><a href="#运行步骤" class="headerlink" title="运行步骤"></a>运行步骤</h4><ol>
+<li>清空PC寄存器</li>
+<li>大节拍发生器生成节拍，刺激PC增1</li>
+<li>CU译码由小节拍刺激，完成该条命令的需要完成的任务</li>
+<li>大节拍增1，继续运行</li>
+</ol>
+<h4 id="设计部分"><a href="#设计部分" class="headerlink" title="设计部分"></a>设计部分</h4><h5 id="指令可以实现的功能"><a href="#指令可以实现的功能" class="headerlink" title="指令可以实现的功能"></a>指令可以实现的功能</h5><ul>
+<li>取指</li>
+<li>从RAM中读</li>
+<li>向RAM中写</li>
+<li>两个数相加</li>
+<li>两个数相减</li>
+<li>两个数相乘</li>
+<li>寄存器间数据转移</li>
+<li>输出到指示灯</li>
+</ul>
+<h5 id="微程序指令实现部分-由小节拍控制从ROM中读取指令控制执行-RAM默认读有效"><a href="#微程序指令实现部分-由小节拍控制从ROM中读取指令控制执行-RAM默认读有效" class="headerlink" title="微程序指令实现部分 (由小节拍控制从ROM中读取指令控制执行,RAM默认读有效)"></a>微程序指令实现部分 (由小节拍控制从ROM中读取指令控制执行,RAM默认读有效)</h5><h6 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h6><ul>
+<li>T0:PC -&gt; MAR</li>
+<li>T1:M(MAR) -&gt; MDR $\overline{RD}$</li>
+<li>T2:PC+1 -&gt; PC</li>
+<li>T3:MDR -&gt; IR</li>
+</ul>
+<h6 id="从RAM中读"><a href="#从RAM中读" class="headerlink" title="从RAM中读"></a>从RAM中读</h6><ol>
+<li>将MAR或者PC中的地址输出到RAM中,将读信号线置为有效</li>
+<li>MDR锁存数据</li>
+<li>将MDR中的数据转移到指定寄存器</li>
+</ol>
+<h6 id="向RAM中写"><a href="#向RAM中写" class="headerlink" title="向RAM中写"></a>向RAM中写</h6><ol>
+<li>将数据转移到MDR中</li>
+<li>将MAR中的地址输出到RAM中，</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;计算机组成原理课程设计&quot;&gt;&lt;a href=&quot;#计算机组成原理课程设计&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理课程设计&quot;&gt;&lt;/a&gt;计算机组成原理课程设计&lt;/h2&gt;&lt;h3 id=&quot;设备参数&quot;&gt;&lt;a href=&quot;#设备参数&quot; class=&quot;
+    
+    </summary>
+    
+      <category term="计组课设" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%BB%84%E8%AF%BE%E8%AE%BE/"/>
+    
+    
+      <category term="计组 课程设计" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%BB%84-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>操作系统课程设计</title>
     <link href="http://yoursite.com/2017/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/08/02/操作系统课程设计/</id>
     <published>2017-08-02T07:46:18.000Z</published>
-    <updated>2017-09-13T05:07:29.000Z</updated>
+    <updated>2017-09-14T04:05:07.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
 <li>下载源码<a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/Nachos/nachos-java.tar.gz" target="_blank" rel="external">源码包下载地址</a> <br>使用如下命令进行解压缩<code>tar zxvf nachos-java.tar.gz</code></li>
@@ -169,7 +237,13 @@
 <li>Your solution should work even if there are multiple speakers and listeners for the same Communicator</li>
 <li>Each communicator should only use exactly one lock.</li>
 </ol>
-<h5 id="实验要求-3"><a href="#实验要求-3" class="headerlink" title="实验要求"></a>实验要求</h5><p>使用条件变量(不能使用 semaphores!)实现一个字长信息的同 步发送和接收。使用 void speak(int word)和 int listen()函数来实现 Communicator 类的通讯工作。Speak()函数具有原子性，在相同的 Communicator 类中等待 listen()函数被调用，然后将此字传输给 listen()函数。一旦传送完毕，两个函数都返回(listen 函数返回此字)。</p>
+<h5 id="实验要求-3"><a href="#实验要求-3" class="headerlink" title="实验要求"></a>实验要求</h5><p>使用条件变量(不能使用 semaphores!)实现一个字长信息的同步发送和接收。使用 void speak(int word)和 int listen()函数来实现 Communicator 类的通讯工作。Speak()函数具有原子性，在相同的 Communicator 类中等待 listen()函数被调用，然后将此字传输给 listen()函数。一旦传送完毕，两个函数都返回(listen 函数返回此字)。</p>
+<h5 id="自己理解-3"><a href="#自己理解-3" class="headerlink" title="自己理解"></a>自己理解</h5><ul>
+<li>首先这是一个生产者和消费者的问题，但是与我们书上说的又不是完全一致，这里还要求了同步，所以生产者还需要等待有人在消费再生产。</li>
+<li>生产者角度，生产所诉要的条件，为了保证数据区的安全，生产者首先需要获得所有生产者消费者共用的锁，获得锁之后，先将生产的数量++，然后检查数据区的数据是否有价值，而且此时还有消费者等待消费(不满足条件则<code>sleep()</code>,根据T3的Condition2代码可知，<code>sleep()</code>即释放了锁)。若条件允许后(此时仍然获得锁权限)，写入是数据，声明数据有效，唤醒所有的消费者，生产数量–，完成工作，释放锁</li>
+<li>消费者角度，消费者与生产者角度类似，首先获得锁，消费者数量++，检查数据是否有效，无效则唤醒所有的生产者，<code>sleep()</code>，有效，则读出数据，生命数据无效，消费者–，释放锁</li>
+<li>本任务基于上一个任务，所以需要搞清楚，<code>sleep()</code>与<code>wakeall()</code>都干了啥</li>
+</ul>
 <h5 id="communicate代码"><a href="#communicate代码" class="headerlink" title="communicate代码"></a>communicate代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/master/nachos/threads/Communicator.java" target="_blank" rel="external">P1 T2</a></p>
 <h5 id="测试代码-3"><a href="#测试代码-3" class="headerlink" title="测试代码"></a>测试代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/master/nachos/threads/Communicator.java" target="_blank" rel="external">P1 T2</a><br><strong>为了运行测试代码，请在<code>threads/ThreadedKernel.java</code>文件的<code>selfTest()</code>方法中添加<code>Communicator.selfTest();</code></strong></p>
 <h5 id="实验结果-2"><a href="#实验结果-2" class="headerlink" title="实验结果"></a>实验结果</h5><p><img src="/images/操作系统/P1 T4.png" alt="P1 T4 运行结果"></p>
@@ -182,7 +256,12 @@
 <li>The Lock class does not need to be modified.</li>
 </ol>
 <h5 id="实验要求-4"><a href="#实验要求-4" class="headerlink" title="实验要求"></a>实验要求</h5><p>Nachos系统已经提供了一个简单的轮转调度器，采用简单的FIFO队列进行调度。优先级调度的传统如下: 每个线程拥有一个优先级(在Nachos中, 优先级是一个0到7之间的整数, 默认为1。在线程调度时, 调度程序选择一个拥有最高优先级的处于就绪状态的线程运行。算法首先要在线程对象中完成对线程优先级修改的函数的实现，方便后面设置修改线程优先级完成试验的过程。</p>
-<h5 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h5>]]></content>
+<h5 id="自己理解-4"><a href="#自己理解-4" class="headerlink" title="自己理解"></a>自己理解</h5><ul>
+<li>首先了解一下先进先出队列的工作流程:<br><code>RoundRobinScheduler</code>继承了<code>Schedule</code>但貌似也没干啥，好吧，谁让他是先进先出，就是一个简单的队列模型，从头取，从尾加，继承的是<code>ThreadQueue</code></li>
+<li>一开始没有好好看英文题目的要求，上去就想到了带排序功能的容器去为就绪态的线程排序，结果人家有要求：优先级一样的，等待时间长的先执行</li>
+<li><h5 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h5></li>
+</ul>
+]]></content>
     
     <summary type="html">
     
