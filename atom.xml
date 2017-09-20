@@ -45,24 +45,6 @@
   </entry>
   
   <entry>
-    <title>机器学习笔记</title>
-    <link href="http://yoursite.com/2017/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/09/19/机器学习笔记/</id>
-    <published>2017-09-19T12:10:57.000Z</published>
-    <updated>2017-09-19T12:13:06.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="大三上笔记" scheme="http://yoursite.com/categories/%E5%A4%A7%E4%B8%89%E4%B8%8A%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="机器学习 笔记" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>计算机组成原理课程设计</title>
     <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
@@ -340,41 +322,6 @@
     
     
       <category term="Nachos" scheme="http://yoursite.com/tags/Nachos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Laravel命令行工具</title>
-    <link href="http://yoursite.com/2017/07/15/Laravel%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/"/>
-    <id>http://yoursite.com/2017/07/15/Laravel命令行工具/</id>
-    <published>2017-07-15T02:04:04.000Z</published>
-    <updated>2017-07-16T22:47:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>Laravel composer安装<br>composer 安装框架：<br><code>composer create-project larval-caravel —prefer-dost</code><br></li>
-</ul>
-<h3 id="artisan基础使用实例"><a href="#artisan基础使用实例" class="headerlink" title="artisan基础使用实例"></a>artisan基础使用实例</h3><p>命令行位置<br><img src="/images/php_terminal.jpg" alt="命令行工具位置"></p>
-<ul>
-<li>PHP命令行新建控制器  <em>用于处理路由请求</em><br><code>php artisan make:controller [控制器的名称]</code><br>创建出的文件的位置:<code>/app/Http/Controllers</code> </li>
-<li>PHP命令查看所有路由的方法<br><br><code>php artisan route:list</code><br></li>
-<li>创建连接数据库的类<br>  <em>提供面向数据库连接到接口</em><br><code>php artisan make:model [类的名称]</code><br><br>创建出的文件的位置:<code>/app</code><br><br><mark><a href="http://d.laravel-china.org/docs/5.1/artisan" target="_blank" rel="external">官网文档——Artisan 命令行</a></mark></li>
-</ul>
-<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><p><strong>创建的所有的文件夹最后都需要加上名字的首字母</strong><br><br>例如 <code>test_ZJT</code>   <mark>提倡大家创建类的时候，最好全部使用命令行的方式创建</mark></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;Laravel composer安装&lt;br&gt;composer 安装框架：&lt;br&gt;&lt;code&gt;composer create-project larval-caravel —prefer-dost&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;art
-    
-    </summary>
-    
-      <category term="齐鲁软件大赛" scheme="http://yoursite.com/categories/%E9%BD%90%E9%B2%81%E8%BD%AF%E4%BB%B6%E5%A4%A7%E8%B5%9B/"/>
-    
-    
-      <category term="php artisan" scheme="http://yoursite.com/tags/php-artisan/"/>
     
   </entry>
   
