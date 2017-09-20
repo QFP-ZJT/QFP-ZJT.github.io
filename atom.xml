@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-19T03:21:26.000Z</updated>
+  <updated>2017-09-20T07:09:28.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,19 +16,66 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>汇编语言程序设计笔记</title>
+    <link href="http://yoursite.com/2017/09/20/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/09/20/汇编语言程序设计笔记/</id>
+    <published>2017-09-20T06:41:09.000Z</published>
+    <updated>2017-09-20T07:09:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="专用寄存器"><a href="#专用寄存器" class="headerlink" title="专用寄存器"></a>专用寄存器</h3><ul>
+<li>IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址</li>
+<li>FLAGS 程序状态寄存器:<br>条件码标志位: OF溢出 SF符号 ZF零 CF进位 AF辅助进位(4位二进制表示十进制数字加法时是否进位) PF奇偶<br> DF 方向标志<br>中断寄存器，陷阱寄存器</li>
+<li></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;专用寄存器&quot;&gt;&lt;a href=&quot;#专用寄存器&quot; class=&quot;headerlink&quot; title=&quot;专用寄存器&quot;&gt;&lt;/a&gt;专用寄存器&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址&lt;/li&gt;
+&lt;li&gt;FLAGS 程序
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="汇编语言" scheme="http://yoursite.com/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习笔记</title>
+    <link href="http://yoursite.com/2017/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/09/19/机器学习笔记/</id>
+    <published>2017-09-19T12:10:57.000Z</published>
+    <updated>2017-09-19T12:13:06.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="大三上笔记" scheme="http://yoursite.com/categories/%E5%A4%A7%E4%B8%89%E4%B8%8A%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="机器学习 笔记" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机组成原理课程设计</title>
     <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
     <published>2017-09-19T02:34:26.000Z</published>
-    <updated>2017-09-19T03:21:26.000Z</updated>
+    <updated>2017-09-20T07:09:29.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计"><a href="#计算机组成原理课程设计" class="headerlink" title="计算机组成原理课程设计"></a>计算机组成原理课程设计</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
 <li>ROM:256<em>8</em>3</li>
-<li>RAM:256*8</li>
+<li>RAM:256*8      据此PC8位,覆盖所有RAM区域</li>
 </ol>
 <h3 id="设计方案"><a href="#设计方案" class="headerlink" title="设计方案"></a>设计方案</h3><h4 id="硬件组成部分"><a href="#硬件组成部分" class="headerlink" title="硬件组成部分"></a>硬件组成部分</h4><h5 id="CPU内部"><a href="#CPU内部" class="headerlink" title="CPU内部:"></a>CPU内部:</h5><ol>
 <li>节拍发生器(分为大节拍和小节拍 暂定4个小节拍刺激一个大节拍)</li>
-<li>寄存器组(包括固定的PC,IR,MAR,MDR寄存器)</li>
+<li>寄存器组(包括固定的PC(000),IR(001),MAR(010),MDR(011)寄存器以及临时存储的R0(100),R1(101),R2(110),R3(111))</li>
 <li>CU(指令译码与微程序实现)</li>
 <li>ALU模块</li>
 <li>总线</li>
@@ -55,19 +102,24 @@
 </ul>
 <h5 id="微程序指令实现部分-由小节拍控制从ROM中读取指令控制执行-RAM默认读有效"><a href="#微程序指令实现部分-由小节拍控制从ROM中读取指令控制执行-RAM默认读有效" class="headerlink" title="微程序指令实现部分 (由小节拍控制从ROM中读取指令控制执行,RAM默认读有效)"></a>微程序指令实现部分 (由小节拍控制从ROM中读取指令控制执行,RAM默认读有效)</h5><h6 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h6><ul>
 <li>T0:PC -&gt; MAR</li>
-<li>T1:M(MAR) -&gt; MDR $\overline{RD}$</li>
+<li>T1:M(MAR) -&gt; MDR</li>
 <li>T2:PC+1 -&gt; PC</li>
 <li>T3:MDR -&gt; IR</li>
 </ul>
-<h6 id="从RAM中读"><a href="#从RAM中读" class="headerlink" title="从RAM中读"></a>从RAM中读</h6><ol>
-<li>将MAR或者PC中的地址输出到RAM中,将读信号线置为有效</li>
-<li>MDR锁存数据</li>
-<li>将MDR中的数据转移到指定寄存器</li>
-</ol>
-<h6 id="向RAM中写"><a href="#向RAM中写" class="headerlink" title="向RAM中写"></a>向RAM中写</h6><ol>
-<li>将数据转移到MDR中</li>
-<li>将MAR中的地址输出到RAM中，</li>
-</ol>
+<h6 id="从RAM中读-将IR或者其他寄存器中地址指定的数据传输到指定寄存器"><a href="#从RAM中读-将IR或者其他寄存器中地址指定的数据传输到指定寄存器" class="headerlink" title="从RAM中读 将IR或者其他寄存器中地址指定的数据传输到指定寄存器"></a>从RAM中读 将IR或者其他寄存器中地址指定的数据传输到指定寄存器</h6><ul>
+<li>T0:R0 -&gt; MAR</li>
+<li>T1:M(MAR) -&gt; MDR</li>
+<li>T2:MDR -&gt; R1</li>
+</ul>
+<h6 id="向RAM中写-将R中的数据送入IR或者其他寄存器中地址指定的位置"><a href="#向RAM中写-将R中的数据送入IR或者其他寄存器中地址指定的位置" class="headerlink" title="向RAM中写 将R中的数据送入IR或者其他寄存器中地址指定的位置"></a>向RAM中写 将R中的数据送入IR或者其他寄存器中地址指定的位置</h6><ul>
+<li>T0:R0 -&gt; MAR</li>
+<li>T1:R -&gt; MDR</li>
+<li>T2:MDR -&gt; M(MAR)</li>
+</ul>
+<h5 id="24位指令控制"><a href="#24位指令控制" class="headerlink" title="24位指令控制"></a>24位指令控制</h5><ul>
+<li>00 01 02 03 04 05 06 07 :<br> 00和04控制输入输出 01 02 03与05 06 07经过三八译码器选中寄存器(允许CP脉冲的输入) </li>
+<li>08 09 10 11 12 13 14 15 :<br> 08和09控制读有效和写有效</li>
+</ul>
 ]]></content>
     
     <summary type="html">
@@ -76,10 +128,10 @@
     
     </summary>
     
-      <category term="计组课设" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%BB%84%E8%AF%BE%E8%AE%BE/"/>
+      <category term="课程设计" scheme="http://yoursite.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     
     
-      <category term="计组 课程设计" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%BB%84-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+      <category term="计组课程设计" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%BB%84%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
@@ -88,7 +140,7 @@
     <link href="http://yoursite.com/2017/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/08/02/操作系统课程设计/</id>
     <published>2017-08-02T07:46:18.000Z</published>
-    <updated>2017-09-14T04:05:07.000Z</updated>
+    <updated>2017-09-20T07:09:30.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
 <li>下载源码<a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/Nachos/nachos-java.tar.gz" target="_blank" rel="external">源码包下载地址</a> <br>使用如下命令进行解压缩<code>tar zxvf nachos-java.tar.gz</code></li>
@@ -141,13 +193,27 @@
 <h3 id="生成nachos的文档"><a href="#生成nachos的文档" class="headerlink" title="生成nachos的文档"></a>生成<code>nachos</code>的文档</h3><p>在<code>nachos</code>目录下，执行命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir ../doc</div><div class="line">gmake doc</div></pre></td></tr></table></figure>
 <p>在<code>../doc</code>目录下，就能看见index.html,浏览器打开有惊喜</p>
-<h3 id="源代码理解"><a href="#源代码理解" class="headerlink" title="源代码理解"></a>源代码理解</h3><h4 id="For-Proj1"><a href="#For-Proj1" class="headerlink" title="For Proj1"></a>For Proj1</h4><h5 id="创建的设备-interrupt-amp-amp-timer"><a href="#创建的设备-interrupt-amp-amp-timer" class="headerlink" title="创建的设备: interrupt &amp;&amp; timer"></a>创建的设备: <code>interrupt</code> &amp;&amp; <code>timer</code></h5><h6 id="interrupt"><a href="#interrupt" class="headerlink" title="interrupt:"></a>interrupt:</h6><ul>
+<h3 id="源代码理解"><a href="#源代码理解" class="headerlink" title="源代码理解"></a>源代码理解</h3><h4 id="For-Proj1"><a href="#For-Proj1" class="headerlink" title="For Proj1"></a>For Proj1</h4><h5 id="interrupt"><a href="#interrupt" class="headerlink" title="interrupt:"></a>interrupt:</h5><ul>
 <li>允许接收中断请求,将中断请求存储于队列中</li>
-<li>中断请求需要的参数: time 在中断服务器中想要呆的时间<br> type 给中断一个名字 <br> handler =&gt; ‘设备时间处理程序’ runnable的对象</li>
+<li>中断请求需要的参数: time 在中断服务器中到期的时间<br> type 给中断一个名字 <br> handler =&gt; ‘设备事件处理程序’ runnable的对象</li>
+<li></li>
 </ul>
-<h6 id="timer"><a href="#timer" class="headerlink" title="timer"></a>timer</h6><ul>
+<h5 id="timer"><a href="#timer" class="headerlink" title="timer"></a>timer</h5><ul>
 <li>向中断请求控制器中添加中断请求，等待设定的时间和中断处理程序(该处理程序又会重新将中断请求送入中断请求控制器中，并执行指定的handler程序)    从而实现每TimerTicks被唤醒一次</li>
 <li>所以在Alarm中可以这么用</li>
+</ul>
+<h5 id="nachos启动流程"><a href="#nachos启动流程" class="headerlink" title="nachos启动流程"></a>nachos启动流程</h5><ul>
+<li>JVM启动，从main()函数开始，创建硬件模拟设备</li>
+<li>主线程main()转换成nachos的线程主线程.创建过程:<br>1.为nachos主线程创建TCB(该TCB由nachos管理),启动nachos线程，并与刚刚创建的TCB绑定</li>
+<li>nachos主线程开始加载，从配置文件中配置自己的相关参数</li>
+<li>创建<code>idle</code>闲置时运行的线程。</li>
+<li>创建<code>alarm</code> <code>alarm</code>实现的是:每隔一段时间唤醒一个方法，做点该做的事情.在proj1中为唤醒睡眠指定时间的线程使用</li>
+<li></li>
+</ul>
+<h5 id="nachos线程的生命周期"><a href="#nachos线程的生命周期" class="headerlink" title="nachos线程的生命周期"></a>nachos线程的生命周期</h5><ul>
+<li>线程的诞生到<code>new</code>状态:<code>new KThread(new Runable(){线程应该执行的任务})</code></li>
+<li>线程的开始执行,<code>fork()</code>:<br>1.线程的状态为<code>new</code>的检查。<br>2.创建一个TCB,并将一个包含执行该线程代码命令的<code>Runable</code>传入TCB中，并执行<code>threadroot()</code>方法<br>  <code>threadroot()</code>方法:唤醒主线程，自己等待<br>3.<code>ready()</code>将该子线程加入就绪队列中。</li>
+<li></li>
 </ul>
 <h4 id="For-Proj2"><a href="#For-Proj2" class="headerlink" title="For Proj2"></a>For Proj2</h4><h5 id="文件的copy-文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭"><a href="#文件的copy-文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭" class="headerlink" title="文件的copy() 文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭"></a>文件的copy() 文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭</h5><h3 id="任务一-proj1-建立线程系统"><a href="#任务一-proj1-建立线程系统" class="headerlink" title="任务一(proj1):建立线程系统"></a>任务一(proj1):建立线程系统</h3><p><strong>任务列表:</strong></p>
 <ul>
@@ -270,7 +336,7 @@
     
     </summary>
     
-      <category term="操作系统课设" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E8%AE%BE/"/>
+      <category term="课程设计" scheme="http://yoursite.com/categories/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     
     
       <category term="Nachos" scheme="http://yoursite.com/tags/Nachos/"/>
