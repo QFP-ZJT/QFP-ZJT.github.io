@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="计算机组成原理课程设计设备参数 ROM:25683 RAM:256*8      据此PC8位,覆盖所有RAM区域  设计方案硬件组成部分CPU内部: 节拍发生器(分为大节拍和小节拍 暂定4个小节拍刺激一个大节拍) 寄存器组(包括固定的PC(000),IR(001),MAR(010),MDR(011)寄存器以及临时存储的R0(100),R1(101),R2(110),R3(111)) CU(指令译">
+<meta name="description" content="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)设备参数 ROM:25683 RAM:256*8      据此PC8位,覆盖所有RAM区域  设计方案硬件组成部分CPU内部: 节拍发生器   不是流水线程序，所以没有必要严格按照节拍设计  寄存器组(PC IR MAR MDR 状态寄存器 累加器 数据寄存器 基址寄存器 R0) 对外可见的只有累加(减/乘)器(R1)  数据寄存器(存储">
 <meta name="keywords" content="计组课程设计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机组成原理课程设计">
 <meta property="og:url" content="http://yoursite.com/2017/09/19/计算机组成原理课程设计/index.html">
 <meta property="og:site_name" content="Jingtao">
-<meta property="og:description" content="计算机组成原理课程设计设备参数 ROM:25683 RAM:256*8      据此PC8位,覆盖所有RAM区域  设计方案硬件组成部分CPU内部: 节拍发生器(分为大节拍和小节拍 暂定4个小节拍刺激一个大节拍) 寄存器组(包括固定的PC(000),IR(001),MAR(010),MDR(011)寄存器以及临时存储的R0(100),R1(101),R2(110),R3(111)) CU(指令译">
+<meta property="og:description" content="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)设备参数 ROM:25683 RAM:256*8      据此PC8位,覆盖所有RAM区域  设计方案硬件组成部分CPU内部: 节拍发生器   不是流水线程序，所以没有必要严格按照节拍设计  寄存器组(PC IR MAR MDR 状态寄存器 累加器 数据寄存器 基址寄存器 R0) 对外可见的只有累加(减/乘)器(R1)  数据寄存器(存储">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-20T07:09:29.000Z">
+<meta property="og:updated_time" content="2017-09-21T07:57:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理课程设计">
-<meta name="twitter:description" content="计算机组成原理课程设计设备参数 ROM:25683 RAM:256*8      据此PC8位,覆盖所有RAM区域  设计方案硬件组成部分CPU内部: 节拍发生器(分为大节拍和小节拍 暂定4个小节拍刺激一个大节拍) 寄存器组(包括固定的PC(000),IR(001),MAR(010),MDR(011)寄存器以及临时存储的R0(100),R1(101),R2(110),R3(111)) CU(指令译">
+<meta name="twitter:description" content="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)设备参数 ROM:25683 RAM:256*8      据此PC8位,覆盖所有RAM区域  设计方案硬件组成部分CPU内部: 节拍发生器   不是流水线程序，所以没有必要严格按照节拍设计  寄存器组(PC IR MAR MDR 状态寄存器 累加器 数据寄存器 基址寄存器 R0) 对外可见的只有累加(减/乘)器(R1)  数据寄存器(存储">
 
 
 
@@ -381,26 +381,26 @@
       
 
       
-        <h2 id="计算机组成原理课程设计"><a href="#计算机组成原理课程设计" class="headerlink" title="计算机组成原理课程设计"></a>计算机组成原理课程设计</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
+        <h2 id="计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性"><a href="#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性" class="headerlink" title="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)"></a>计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
 <li>ROM:256<em>8</em>3</li>
 <li>RAM:256*8      据此PC8位,覆盖所有RAM区域</li>
 </ol>
 <h3 id="设计方案"><a href="#设计方案" class="headerlink" title="设计方案"></a>设计方案</h3><h4 id="硬件组成部分"><a href="#硬件组成部分" class="headerlink" title="硬件组成部分"></a>硬件组成部分</h4><h5 id="CPU内部"><a href="#CPU内部" class="headerlink" title="CPU内部:"></a>CPU内部:</h5><ol>
-<li>节拍发生器(分为大节拍和小节拍 暂定4个小节拍刺激一个大节拍)</li>
-<li>寄存器组(包括固定的PC(000),IR(001),MAR(010),MDR(011)寄存器以及临时存储的R0(100),R1(101),R2(110),R3(111))</li>
-<li>CU(指令译码与微程序实现)</li>
-<li>ALU模块</li>
-<li>总线</li>
+<li><p><del>节拍发生器</del>   不是流水线程序，所以没有必要严格按照节拍设计</p>
+</li>
+<li><p>寄存器组(PC IR MAR MDR 状态寄存器 累加器 数据寄存器 基址寄存器 R0)</p>
+<p>对外可见的只有累加(减/乘)器(R1)  数据寄存器(存储乘法超限的位数)  基址寄存器(为RAM使用)  R0</p>
+</li>
+<li><p>CU(指令译码与微程序实现)</p>
+</li>
+<li><p>ALU模块</p>
+</li>
+<li><p>总线</p>
+</li>
 </ol>
 <h5 id="CPU外部"><a href="#CPU外部" class="headerlink" title="CPU外部"></a>CPU外部</h5><ol>
 <li>ROM(存储微程序)</li>
 <li>RAM(指令与数据)</li>
-</ol>
-<h4 id="运行步骤"><a href="#运行步骤" class="headerlink" title="运行步骤"></a>运行步骤</h4><ol>
-<li>清空PC寄存器</li>
-<li>大节拍发生器生成节拍，刺激PC增1</li>
-<li>CU译码由小节拍刺激，完成该条命令的需要完成的任务</li>
-<li>大节拍增1，继续运行</li>
 </ol>
 <h4 id="设计部分"><a href="#设计部分" class="headerlink" title="设计部分"></a>设计部分</h4><h5 id="指令可以实现的功能"><a href="#指令可以实现的功能" class="headerlink" title="指令可以实现的功能"></a>指令可以实现的功能</h5><ul>
 <li>取指</li>
@@ -428,11 +428,18 @@
 <li>T1:R -&gt; MDR</li>
 <li>T2:MDR -&gt; M(MAR)</li>
 </ul>
-<h5 id="24位指令控制"><a href="#24位指令控制" class="headerlink" title="24位指令控制"></a>24位指令控制</h5><ul>
-<li>00 01 02 03 04 05 06 07 :<br> 00和04控制输入输出 01 02 03与05 06 07经过三八译码器选中寄存器(允许CP脉冲的输入) </li>
-<li>08 09 10 11 12 13 14 15 :<br> 08和09控制读有效和写有效</li>
+<h5 id="汇编与机器码对应关系"><a href="#汇编与机器码对应关系" class="headerlink" title="汇编与机器码对应关系"></a>汇编与机器码对应关系</h5><ul>
+<li>mov1         0001      对R1寄存器赋值</li>
+<li>mov0         0010      对R0寄存器赋值</li>
 </ul>
-
+<p>寻址方式</p>
+<ul>
+<li>立即数寻址    10</li>
+<li>RAM寻址        11</li>
+<li>寄存器寻址     0~     0或者1号寄存器</li>
+</ul>
+<h5 id="24位指令控制"><a href="#24位指令控制" class="headerlink" title="24位指令控制"></a>24位指令控制</h5><h5 id="微程序地址"><a href="#微程序地址" class="headerlink" title="微程序地址"></a>微程序地址</h5><h3 id="硬件实现"><a href="#硬件实现" class="headerlink" title="硬件实现"></a>硬件实现</h3><h4 id="ALU"><a href="#ALU" class="headerlink" title="ALU"></a>ALU</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span> ALU_ADD (clk,op<span class="comment">/*选择要执行的操作*/</span>,in_a<span class="comment">/*连接累加器*/</span>, in_b<span class="comment">/*连接BUS*/</span>,</div><div class="line">	cin<span class="comment">/*进位标志位*/</span>, out<span class="comment">/*连接到总线*/</span>,</div><div class="line">	 cout<span class="comment">/*连接状态寄存器*/</span>)</div><div class="line"><span class="comment">/**</span></div><div class="line">*	op 000 加法</div><div class="line">*	op 001 减法</div><div class="line">*	op 010 乘法</div><div class="line">*	op 011 对in_a取非</div><div class="line">*	op 100 in_a,in_b异或</div><div class="line">*	op 111 不输出</div><div class="line">*/</div><div class="line"><span class="keyword">input</span> clk,op,in_a,in_b,cin;</div><div class="line"><span class="keyword">output</span> out,cout;</div><div class="line"><span class="keyword">input</span> op, in_a, in_b, cin;</div><div class="line"><span class="keyword">output</span> out , cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_a;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_b;</div><div class="line"><span class="keyword">wire</span> cin, t,clk;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] out;</div><div class="line"><span class="keyword">wire</span> cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">2</span>:<span class="number">0</span>] op;</div><div class="line"><span class="keyword">case</span>(op)</div><div class="line">	<span class="number">3'b000</span>:	<span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a+in_b+cin;</div><div class="line">	<span class="number">3'b001</span>: <span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a-in_b-cin;</div><div class="line">	<span class="number">3'b010</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a*in_b;</div><div class="line">	<span class="number">3'b011</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = ~in_a;</div><div class="line">	<span class="number">3'b100</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a^in_b;</div><div class="line">	<span class="number">3'b111</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = <span class="number">8'bzzzzzzzz</span>;</div><div class="line"><span class="keyword">endcase</span>	</div><div class="line"><span class="keyword">endmodule</span></div></pre></td></tr></table></figure>
+<h4 id="uPC"><a href="#uPC" class="headerlink" title="uPC"></a>uPC</h4>
       
     </div>
 
@@ -558,7 +565,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -580,7 +587,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -622,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机组成原理课程设计"><span class="nav-number">1.</span> <span class="nav-text">计算机组成原理课程设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设备参数"><span class="nav-number">1.1.</span> <span class="nav-text">设备参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计方案"><span class="nav-number">1.2.</span> <span class="nav-text">设计方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件组成部分"><span class="nav-number">1.2.1.</span> <span class="nav-text">硬件组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CPU内部"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">CPU内部:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CPU外部"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">CPU外部</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行步骤"><span class="nav-number">1.2.2.</span> <span class="nav-text">运行步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计部分"><span class="nav-number">1.2.3.</span> <span class="nav-text">设计部分</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#指令可以实现的功能"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">指令可以实现的功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#微程序指令实现部分-由小节拍控制从ROM中读取指令控制执行-RAM默认读有效"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">微程序指令实现部分 (由小节拍控制从ROM中读取指令控制执行,RAM默认读有效)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#取值"><span class="nav-number">1.2.3.2.1.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#从RAM中读-将IR或者其他寄存器中地址指定的数据传输到指定寄存器"><span class="nav-number">1.2.3.2.2.</span> <span class="nav-text">从RAM中读 将IR或者其他寄存器中地址指定的数据传输到指定寄存器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#向RAM中写-将R中的数据送入IR或者其他寄存器中地址指定的位置"><span class="nav-number">1.2.3.2.3.</span> <span class="nav-text">向RAM中写 将R中的数据送入IR或者其他寄存器中地址指定的位置</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#24位指令控制"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">24位指令控制</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性"><span class="nav-number">1.</span> <span class="nav-text">计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设备参数"><span class="nav-number">1.1.</span> <span class="nav-text">设备参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计方案"><span class="nav-number">1.2.</span> <span class="nav-text">设计方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件组成部分"><span class="nav-number">1.2.1.</span> <span class="nav-text">硬件组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CPU内部"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">CPU内部:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CPU外部"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">CPU外部</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计部分"><span class="nav-number">1.2.2.</span> <span class="nav-text">设计部分</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#指令可以实现的功能"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">指令可以实现的功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#微程序指令实现部分-由小节拍控制从ROM中读取指令控制执行-RAM默认读有效"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">微程序指令实现部分 (由小节拍控制从ROM中读取指令控制执行,RAM默认读有效)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#取值"><span class="nav-number">1.2.2.2.1.</span> <span class="nav-text">取值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#从RAM中读-将IR或者其他寄存器中地址指定的数据传输到指定寄存器"><span class="nav-number">1.2.2.2.2.</span> <span class="nav-text">从RAM中读 将IR或者其他寄存器中地址指定的数据传输到指定寄存器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#向RAM中写-将R中的数据送入IR或者其他寄存器中地址指定的位置"><span class="nav-number">1.2.2.2.3.</span> <span class="nav-text">向RAM中写 将R中的数据送入IR或者其他寄存器中地址指定的位置</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#汇编与机器码对应关系"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">汇编与机器码对应关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#24位指令控制"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">24位指令控制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#微程序地址"><span class="nav-number">1.2.2.5.</span> <span class="nav-text">微程序地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件实现"><span class="nav-number">1.3.</span> <span class="nav-text">硬件实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ALU"><span class="nav-number">1.3.1.</span> <span class="nav-text">ALU</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uPC"><span class="nav-number">1.3.2.</span> <span class="nav-text">uPC</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

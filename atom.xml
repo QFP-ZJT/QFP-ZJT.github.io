@@ -49,28 +49,28 @@
     <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
     <published>2017-09-19T02:34:26.000Z</published>
-    <updated>2017-09-20T07:09:29.000Z</updated>
+    <updated>2017-09-21T07:57:51.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计"><a href="#计算机组成原理课程设计" class="headerlink" title="计算机组成原理课程设计"></a>计算机组成原理课程设计</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
+    <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性"><a href="#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性" class="headerlink" title="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)"></a>计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
 <li>ROM:256<em>8</em>3</li>
 <li>RAM:256*8      据此PC8位,覆盖所有RAM区域</li>
 </ol>
 <h3 id="设计方案"><a href="#设计方案" class="headerlink" title="设计方案"></a>设计方案</h3><h4 id="硬件组成部分"><a href="#硬件组成部分" class="headerlink" title="硬件组成部分"></a>硬件组成部分</h4><h5 id="CPU内部"><a href="#CPU内部" class="headerlink" title="CPU内部:"></a>CPU内部:</h5><ol>
-<li>节拍发生器(分为大节拍和小节拍 暂定4个小节拍刺激一个大节拍)</li>
-<li>寄存器组(包括固定的PC(000),IR(001),MAR(010),MDR(011)寄存器以及临时存储的R0(100),R1(101),R2(110),R3(111))</li>
-<li>CU(指令译码与微程序实现)</li>
-<li>ALU模块</li>
-<li>总线</li>
+<li><p><del>节拍发生器</del>   不是流水线程序，所以没有必要严格按照节拍设计</p>
+</li>
+<li><p>寄存器组(PC IR MAR MDR 状态寄存器 累加器 数据寄存器 基址寄存器 R0)</p>
+<p>对外可见的只有累加(减/乘)器(R1)  数据寄存器(存储乘法超限的位数)  基址寄存器(为RAM使用)  R0</p>
+</li>
+<li><p>CU(指令译码与微程序实现)</p>
+</li>
+<li><p>ALU模块</p>
+</li>
+<li><p>总线</p>
+</li>
 </ol>
 <h5 id="CPU外部"><a href="#CPU外部" class="headerlink" title="CPU外部"></a>CPU外部</h5><ol>
 <li>ROM(存储微程序)</li>
 <li>RAM(指令与数据)</li>
-</ol>
-<h4 id="运行步骤"><a href="#运行步骤" class="headerlink" title="运行步骤"></a>运行步骤</h4><ol>
-<li>清空PC寄存器</li>
-<li>大节拍发生器生成节拍，刺激PC增1</li>
-<li>CU译码由小节拍刺激，完成该条命令的需要完成的任务</li>
-<li>大节拍增1，继续运行</li>
 </ol>
 <h4 id="设计部分"><a href="#设计部分" class="headerlink" title="设计部分"></a>设计部分</h4><h5 id="指令可以实现的功能"><a href="#指令可以实现的功能" class="headerlink" title="指令可以实现的功能"></a>指令可以实现的功能</h5><ul>
 <li>取指</li>
@@ -98,15 +98,22 @@
 <li>T1:R -&gt; MDR</li>
 <li>T2:MDR -&gt; M(MAR)</li>
 </ul>
-<h5 id="24位指令控制"><a href="#24位指令控制" class="headerlink" title="24位指令控制"></a>24位指令控制</h5><ul>
-<li>00 01 02 03 04 05 06 07 :<br> 00和04控制输入输出 01 02 03与05 06 07经过三八译码器选中寄存器(允许CP脉冲的输入) </li>
-<li>08 09 10 11 12 13 14 15 :<br> 08和09控制读有效和写有效</li>
+<h5 id="汇编与机器码对应关系"><a href="#汇编与机器码对应关系" class="headerlink" title="汇编与机器码对应关系"></a>汇编与机器码对应关系</h5><ul>
+<li>mov1         0001      对R1寄存器赋值</li>
+<li>mov0         0010      对R0寄存器赋值</li>
 </ul>
-]]></content>
+<p>寻址方式</p>
+<ul>
+<li>立即数寻址    10</li>
+<li>RAM寻址        11</li>
+<li>寄存器寻址     0~     0或者1号寄存器</li>
+</ul>
+<h5 id="24位指令控制"><a href="#24位指令控制" class="headerlink" title="24位指令控制"></a>24位指令控制</h5><h5 id="微程序地址"><a href="#微程序地址" class="headerlink" title="微程序地址"></a>微程序地址</h5><h3 id="硬件实现"><a href="#硬件实现" class="headerlink" title="硬件实现"></a>硬件实现</h3><h4 id="ALU"><a href="#ALU" class="headerlink" title="ALU"></a>ALU</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span> ALU_ADD (clk,op<span class="comment">/*选择要执行的操作*/</span>,in_a<span class="comment">/*连接累加器*/</span>, in_b<span class="comment">/*连接BUS*/</span>,</div><div class="line">	cin<span class="comment">/*进位标志位*/</span>, out<span class="comment">/*连接到总线*/</span>,</div><div class="line">	 cout<span class="comment">/*连接状态寄存器*/</span>)</div><div class="line"><span class="comment">/**</span></div><div class="line">*	op 000 加法</div><div class="line">*	op 001 减法</div><div class="line">*	op 010 乘法</div><div class="line">*	op 011 对in_a取非</div><div class="line">*	op 100 in_a,in_b异或</div><div class="line">*	op 111 不输出</div><div class="line">*/</div><div class="line"><span class="keyword">input</span> clk,op,in_a,in_b,cin;</div><div class="line"><span class="keyword">output</span> out,cout;</div><div class="line"><span class="keyword">input</span> op, in_a, in_b, cin;</div><div class="line"><span class="keyword">output</span> out , cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_a;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_b;</div><div class="line"><span class="keyword">wire</span> cin, t,clk;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] out;</div><div class="line"><span class="keyword">wire</span> cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">2</span>:<span class="number">0</span>] op;</div><div class="line"><span class="keyword">case</span>(op)</div><div class="line">	<span class="number">3'b000</span>:	<span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a+in_b+cin;</div><div class="line">	<span class="number">3'b001</span>: <span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a-in_b-cin;</div><div class="line">	<span class="number">3'b010</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a*in_b;</div><div class="line">	<span class="number">3'b011</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = ~in_a;</div><div class="line">	<span class="number">3'b100</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a^in_b;</div><div class="line">	<span class="number">3'b111</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = <span class="number">8'bzzzzzzzz</span>;</div><div class="line"><span class="keyword">endcase</span>	</div><div class="line"><span class="keyword">endmodule</span></div></pre></td></tr></table></figure>
+<h4 id="uPC"><a href="#uPC" class="headerlink" title="uPC"></a>uPC</h4>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;计算机组成原理课程设计&quot;&gt;&lt;a href=&quot;#计算机组成原理课程设计&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理课程设计&quot;&gt;&lt;/a&gt;计算机组成原理课程设计&lt;/h2&gt;&lt;h3 id=&quot;设备参数&quot;&gt;&lt;a href=&quot;#设备参数&quot; class=&quot;
+      &lt;h2 id=&quot;计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性&quot;&gt;&lt;a href=&quot;#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)&quot;&gt;&lt;/a&gt;计
     
     </summary>
     
@@ -326,6 +333,41 @@
   </entry>
   
   <entry>
+    <title>Laravel命令行工具</title>
+    <link href="http://yoursite.com/2017/07/15/Laravel%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/"/>
+    <id>http://yoursite.com/2017/07/15/Laravel命令行工具/</id>
+    <published>2017-07-15T02:04:04.000Z</published>
+    <updated>2017-07-16T22:47:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>Laravel composer安装<br>composer 安装框架：<br><code>composer create-project larval-caravel —prefer-dost</code><br></li>
+</ul>
+<h3 id="artisan基础使用实例"><a href="#artisan基础使用实例" class="headerlink" title="artisan基础使用实例"></a>artisan基础使用实例</h3><p>命令行位置<br><img src="/images/php_terminal.jpg" alt="命令行工具位置"></p>
+<ul>
+<li>PHP命令行新建控制器  <em>用于处理路由请求</em><br><code>php artisan make:controller [控制器的名称]</code><br>创建出的文件的位置:<code>/app/Http/Controllers</code> </li>
+<li>PHP命令查看所有路由的方法<br><br><code>php artisan route:list</code><br></li>
+<li>创建连接数据库的类<br>  <em>提供面向数据库连接到接口</em><br><code>php artisan make:model [类的名称]</code><br><br>创建出的文件的位置:<code>/app</code><br><br><mark><a href="http://d.laravel-china.org/docs/5.1/artisan" target="_blank" rel="external">官网文档——Artisan 命令行</a></mark></li>
+</ul>
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><p><strong>创建的所有的文件夹最后都需要加上名字的首字母</strong><br><br>例如 <code>test_ZJT</code>   <mark>提倡大家创建类的时候，最好全部使用命令行的方式创建</mark></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;Laravel composer安装&lt;br&gt;composer 安装框架：&lt;br&gt;&lt;code&gt;composer create-project larval-caravel —prefer-dost&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;art
+    
+    </summary>
+    
+      <category term="齐鲁软件大赛" scheme="http://yoursite.com/categories/%E9%BD%90%E9%B2%81%E8%BD%AF%E4%BB%B6%E5%A4%A7%E8%B5%9B/"/>
+    
+    
+      <category term="php artisan" scheme="http://yoursite.com/tags/php-artisan/"/>
+    
+  </entry>
+  
+  <entry>
     <title>愿得一喵心，白首不分离</title>
     <link href="http://yoursite.com/2017/07/14/%E6%84%BF%E5%BE%97%E4%B8%80%E4%BA%BA%E5%BF%83%EF%BC%8C%E7%99%BD%E9%A6%96%E4%B8%8D%E5%88%86%E7%A6%BB/"/>
     <id>http://yoursite.com/2017/07/14/愿得一人心，白首不分离/</id>
@@ -351,7 +393,7 @@
     <link href="http://yoursite.com/2017/07/12/PhpStorm%E5%85%B3%E8%81%94GitHub%E9%A1%B9%E7%9B%AE/"/>
     <id>http://yoursite.com/2017/07/12/PhpStorm关联GitHub项目/</id>
     <published>2017-07-12T04:16:15.000Z</published>
-    <updated>2017-09-04T16:33:08.000Z</updated>
+    <updated>2017-09-20T14:36:40.000Z</updated>
     
     <content type="html"><![CDATA[<p><mark>仅为我们的内部使用</mark><br><a href="https://github.com/QLsoftware/qlsoftware/" target="_blank" rel="external">github仓库地址</a><br><br><a href="123.206.82.51:81" target="_blank" rel="external">在线测试地址</a><strong>每一分钟刷新一次(提交最晚1分钟之后会生效)</strong><br><strong><a href="http://do.zjtao.me/forums/discussion/education/%E8%A7%A3%E5%86%B3GitHub%E5%90%88%E5%B9%B6%E9%97%AE%E9%A2%98" target="_blank" rel="external">多人合作方式更新到此</a></strong></p>
 <h2 id="零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成"><a href="#零、管理员创建GitHub工程，并实现向服务器的同步工作-管理员已完成" class="headerlink" title="零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)"></a>零、管理员创建GitHub工程，并实现向服务器的同步工作(管理员已完成)</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
@@ -388,6 +430,12 @@
 <li>万一自己写的代码乱掉了，不要慌张，在项目上右键，找到<code>Local History</code> <code>Show History</code><img src="/images/本地回滚代码.jpg" alt="">，检查自己的操作记录，恢复自己的代码。</li>
 <li>还是多写点注释比较好，特别是在上传自己的代码的时候。多写注释，别惹队友手中的菜刀。</li>
 </ul>
+<p>###下一步的计划</p>
+<p>###跳蚤市场</p>
+<p>###校花排名</p>
+<p>###校园直播</p>
+<p>###失物招领</p>
+<p>###脱单墙 </p>
 ]]></content>
     
     <summary type="html">
