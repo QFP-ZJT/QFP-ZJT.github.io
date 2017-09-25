@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-20T07:09:28.000Z</updated>
+  <updated>2017-09-24T01:18:11.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/09/20/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/09/20/汇编语言程序设计笔记/</id>
     <published>2017-09-20T06:41:09.000Z</published>
-    <updated>2017-09-20T07:09:28.000Z</updated>
+    <updated>2017-09-24T01:18:11.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="专用寄存器"><a href="#专用寄存器" class="headerlink" title="专用寄存器"></a>专用寄存器</h3><ul>
 <li>IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址</li>
@@ -49,7 +49,7 @@
     <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
     <published>2017-09-19T02:34:26.000Z</published>
-    <updated>2017-09-21T07:57:51.000Z</updated>
+    <updated>2017-09-22T10:41:28.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性"><a href="#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性" class="headerlink" title="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)"></a>计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
 <li>ROM:256<em>8</em>3</li>
@@ -58,7 +58,7 @@
 <h3 id="设计方案"><a href="#设计方案" class="headerlink" title="设计方案"></a>设计方案</h3><h4 id="硬件组成部分"><a href="#硬件组成部分" class="headerlink" title="硬件组成部分"></a>硬件组成部分</h4><h5 id="CPU内部"><a href="#CPU内部" class="headerlink" title="CPU内部:"></a>CPU内部:</h5><ol>
 <li><p><del>节拍发生器</del>   不是流水线程序，所以没有必要严格按照节拍设计</p>
 </li>
-<li><p>寄存器组(PC IR MAR MDR 状态寄存器 累加器 数据寄存器 基址寄存器 R0)</p>
+<li><p>寄存器组(PC(0) IR(1) MAR(2) MDR(3) 状态寄存器 累加器(4) 数据寄存器(5) 基址寄存器(6) R0(7))</p>
 <p>对外可见的只有累加(减/乘)器(R1)  数据寄存器(存储乘法超限的位数)  基址寄存器(为RAM使用)  R0</p>
 </li>
 <li><p>CU(指令译码与微程序实现)</p>
@@ -108,7 +108,18 @@
 <li>RAM寻址        11</li>
 <li>寄存器寻址     0~     0或者1号寄存器</li>
 </ul>
-<h5 id="24位指令控制"><a href="#24位指令控制" class="headerlink" title="24位指令控制"></a>24位指令控制</h5><h5 id="微程序地址"><a href="#微程序地址" class="headerlink" title="微程序地址"></a>微程序地址</h5><h3 id="硬件实现"><a href="#硬件实现" class="headerlink" title="硬件实现"></a>硬件实现</h3><h4 id="ALU"><a href="#ALU" class="headerlink" title="ALU"></a>ALU</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span> ALU_ADD (clk,op<span class="comment">/*选择要执行的操作*/</span>,in_a<span class="comment">/*连接累加器*/</span>, in_b<span class="comment">/*连接BUS*/</span>,</div><div class="line">	cin<span class="comment">/*进位标志位*/</span>, out<span class="comment">/*连接到总线*/</span>,</div><div class="line">	 cout<span class="comment">/*连接状态寄存器*/</span>)</div><div class="line"><span class="comment">/**</span></div><div class="line">*	op 000 加法</div><div class="line">*	op 001 减法</div><div class="line">*	op 010 乘法</div><div class="line">*	op 011 对in_a取非</div><div class="line">*	op 100 in_a,in_b异或</div><div class="line">*	op 111 不输出</div><div class="line">*/</div><div class="line"><span class="keyword">input</span> clk,op,in_a,in_b,cin;</div><div class="line"><span class="keyword">output</span> out,cout;</div><div class="line"><span class="keyword">input</span> op, in_a, in_b, cin;</div><div class="line"><span class="keyword">output</span> out , cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_a;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_b;</div><div class="line"><span class="keyword">wire</span> cin, t,clk;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] out;</div><div class="line"><span class="keyword">wire</span> cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">2</span>:<span class="number">0</span>] op;</div><div class="line"><span class="keyword">case</span>(op)</div><div class="line">	<span class="number">3'b000</span>:	<span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a+in_b+cin;</div><div class="line">	<span class="number">3'b001</span>: <span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a-in_b-cin;</div><div class="line">	<span class="number">3'b010</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a*in_b;</div><div class="line">	<span class="number">3'b011</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = ~in_a;</div><div class="line">	<span class="number">3'b100</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a^in_b;</div><div class="line">	<span class="number">3'b111</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = <span class="number">8'bzzzzzzzz</span>;</div><div class="line"><span class="keyword">endcase</span>	</div><div class="line"><span class="keyword">endmodule</span></div></pre></td></tr></table></figure>
+<h5 id="24位指令控制"><a href="#24位指令控制" class="headerlink" title="24位指令控制"></a>24位指令控制</h5><ul>
+<li>[2:0]:后继微地址形成方式   <br> 000备用  001顺序   010无条件跳转到[15：8]   011由IR高四位形成</li>
+<li>[10:3]：没有想好</li>
+<li>需要添加的功能   cout什么时候接收    记录是否是相等的   中断申请位</li>
+<li>[12:11]：写、读寄存器</li>
+<li>[15:13]：选择寄存器</li>
+<li>[17:16]：写、读开关</li>
+<li>[20:18]：选择寄存器</li>
+<li>[23:21]：ALU选择开关  </li>
+</ul>
+<h5 id="state寄存器"><a href="#state寄存器" class="headerlink" title="state寄存器"></a>state寄存器</h5><p>7：cin </p>
+<h5 id="微程序地址"><a href="#微程序地址" class="headerlink" title="微程序地址"></a>微程序地址</h5><h3 id="硬件实现"><a href="#硬件实现" class="headerlink" title="硬件实现"></a>硬件实现</h3><h4 id="ALU"><a href="#ALU" class="headerlink" title="ALU"></a>ALU</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span> ALU_ADD (clk,op<span class="comment">/*选择要执行的操作*/</span>,in_a<span class="comment">/*连接累加器*/</span>, in_b<span class="comment">/*连接BUS*/</span>,</div><div class="line">	cin<span class="comment">/*进位标志位*/</span>, out<span class="comment">/*连接到总线*/</span>,</div><div class="line">	 cout<span class="comment">/*连接状态寄存器*/</span>)</div><div class="line"><span class="comment">/**</span></div><div class="line">*	op 000 加法</div><div class="line">*	op 001 减法</div><div class="line">*	op 010 乘法</div><div class="line">*	op 011 对in_a取非</div><div class="line">*	op 100 in_a,in_b异或</div><div class="line">*	op 111 不输出</div><div class="line">*/</div><div class="line"><span class="keyword">input</span> clk,op,in_a,in_b,cin;</div><div class="line"><span class="keyword">output</span> out,cout;</div><div class="line"><span class="keyword">input</span> op, in_a, in_b, cin;</div><div class="line"><span class="keyword">output</span> out , cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_a;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_b;</div><div class="line"><span class="keyword">wire</span> cin, t,clk;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] out;</div><div class="line"><span class="keyword">wire</span> cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">2</span>:<span class="number">0</span>] op;</div><div class="line"><span class="keyword">case</span>(op)</div><div class="line">	<span class="number">3'b000</span>:	<span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a+in_b+cin;</div><div class="line">	<span class="number">3'b001</span>: <span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a-in_b-cin;</div><div class="line">	<span class="number">3'b010</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a*in_b;</div><div class="line">	<span class="number">3'b011</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = ~in_a;</div><div class="line">	<span class="number">3'b100</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a^in_b;</div><div class="line">	<span class="number">3'b111</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = <span class="number">8'bzzzzzzzz</span>;</div><div class="line"><span class="keyword">endcase</span>	</div><div class="line"><span class="keyword">endmodule</span></div></pre></td></tr></table></figure>
 <h4 id="uPC"><a href="#uPC" class="headerlink" title="uPC"></a>uPC</h4>]]></content>
     
     <summary type="html">
@@ -129,7 +140,7 @@
     <link href="http://yoursite.com/2017/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/08/02/操作系统课程设计/</id>
     <published>2017-08-02T07:46:18.000Z</published>
-    <updated>2017-09-20T07:09:30.000Z</updated>
+    <updated>2017-09-25T00:21:13.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
 <li>下载源码<a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/Nachos/nachos-java.tar.gz" target="_blank" rel="external">源码包下载地址</a> <br>使用如下命令进行解压缩<code>tar zxvf nachos-java.tar.gz</code></li>
@@ -172,7 +183,7 @@
 </li>
 <li><p>NachosSecurityManager.fullySecure:安全<br><em><code>README</code>里面的意思是防止考试作弊</em></p>
 </li>
-<li><p>Kernel.kernel:指定加载那一个内核类英文解释更清楚<br><br> For proj1, this is nachos.threads.ThreadedKernel.<br><br> For proj2, this should be nachos.userprog.UserKernel. <br><br> For proj3, nachos.vm.VMKernel. <br><br> For proj4, nachos.network.NetKernel.</p>
+<li><p>Kernel.kernel:指定加载那一个内核类英文解释更清楚<br><br>For proj1, this is nachos.threads.ThreadedKernel.<br><br>For proj2, this should be nachos.userprog.UserKernel. <br><br>For proj3, nachos.vm.VMKernel. <br><br>For proj4, nachos.network.NetKernel.</p>
 </li>
 <li><p>Processor.usingTLB:指定MIPS程序是否提供一个page table<br> interface 或者一个 TLB interface.感觉还是英文好理解一点: <br><br> In page table mode (proj2), the processor accesses an arbitrarily large kernel data structure to do address translation. In TLB mode (proj3 and proj4), the processor maintains a small TLB (4 entries).</p>
 </li>
@@ -184,11 +195,11 @@
 <p>在<code>../doc</code>目录下，就能看见index.html,浏览器打开有惊喜</p>
 <h3 id="源代码理解"><a href="#源代码理解" class="headerlink" title="源代码理解"></a>源代码理解</h3><h4 id="For-Proj1"><a href="#For-Proj1" class="headerlink" title="For Proj1"></a>For Proj1</h4><h5 id="interrupt"><a href="#interrupt" class="headerlink" title="interrupt:"></a>interrupt:</h5><ul>
 <li>允许接收中断请求,将中断请求存储于队列中</li>
-<li>中断请求需要的参数: time 在中断服务器中到期的时间<br> type 给中断一个名字 <br> handler =&gt; ‘设备事件处理程序’ runnable的对象</li>
-<li></li>
+<li>中断请求需要的参数: time 在中断服务器中到期的时间<br> type 给中断一个名字 <br> device event handler =&gt; ‘设备事件处理程序’ runnable的对象</li>
+<li>nachos中断控制器与硬件控制器之间的区别：nachos通过软件实现，通过设定一个时间，来响应中断<em>例如键盘中断，尽管没有按下按键，nachos在到达指定的时间，仍然会响应中断，因此可能会出现错误的键值</em>。</li>
 </ul>
 <h5 id="timer"><a href="#timer" class="headerlink" title="timer"></a>timer</h5><ul>
-<li>向中断请求控制器中添加中断请求，等待设定的时间和中断处理程序(该处理程序又会重新将中断请求送入中断请求控制器中，并执行指定的handler程序)    从而实现每TimerTicks被唤醒一次</li>
+<li>向中断请求控制器中添加中断请求<code>pengdinginterrupt</code>的对象，等待设定的时间，中断处理程序(该处理程序又会重新将中断请求送入中断请求控制器中，并执行指定的handler程序)    从而实现每TimerTicks被唤醒一次</li>
 <li>所以在Alarm中可以这么用</li>
 </ul>
 <h5 id="nachos启动流程"><a href="#nachos启动流程" class="headerlink" title="nachos启动流程"></a>nachos启动流程</h5><ul>
@@ -197,12 +208,12 @@
 <li>nachos主线程开始加载，从配置文件中配置自己的相关参数</li>
 <li>创建<code>idle</code>闲置时运行的线程。</li>
 <li>创建<code>alarm</code> <code>alarm</code>实现的是:每隔一段时间唤醒一个方法，做点该做的事情.在proj1中为唤醒睡眠指定时间的线程使用</li>
-<li></li>
+<li>​</li>
 </ul>
 <h5 id="nachos线程的生命周期"><a href="#nachos线程的生命周期" class="headerlink" title="nachos线程的生命周期"></a>nachos线程的生命周期</h5><ul>
 <li>线程的诞生到<code>new</code>状态:<code>new KThread(new Runable(){线程应该执行的任务})</code></li>
 <li>线程的开始执行,<code>fork()</code>:<br>1.线程的状态为<code>new</code>的检查。<br>2.创建一个TCB,并将一个包含执行该线程代码命令的<code>Runable</code>传入TCB中，并执行<code>threadroot()</code>方法<br>  <code>threadroot()</code>方法:唤醒主线程，自己等待<br>3.<code>ready()</code>将该子线程加入就绪队列中。</li>
-<li></li>
+<li>​</li>
 </ul>
 <h4 id="For-Proj2"><a href="#For-Proj2" class="headerlink" title="For Proj2"></a>For Proj2</h4><h5 id="文件的copy-文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭"><a href="#文件的copy-文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭" class="headerlink" title="文件的copy() 文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭"></a>文件的copy() 文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭</h5><h3 id="任务一-proj1-建立线程系统"><a href="#任务一-proj1-建立线程系统" class="headerlink" title="任务一(proj1):建立线程系统"></a>任务一(proj1):建立线程系统</h3><p><strong>任务列表:</strong></p>
 <ul>
@@ -314,7 +325,7 @@
 <h5 id="自己理解-4"><a href="#自己理解-4" class="headerlink" title="自己理解"></a>自己理解</h5><ul>
 <li>首先了解一下先进先出队列的工作流程:<br><code>RoundRobinScheduler</code>继承了<code>Schedule</code>但貌似也没干啥，好吧，谁让他是先进先出，就是一个简单的队列模型，从头取，从尾加，继承的是<code>ThreadQueue</code></li>
 <li>一开始没有好好看英文题目的要求，上去就想到了带排序功能的容器去为就绪态的线程排序，结果人家有要求：优先级一样的，等待时间长的先执行</li>
-<li><h5 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h5></li>
+<li>​<h5 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h5></li>
 </ul>
 ]]></content>
     
@@ -329,41 +340,6 @@
     
     
       <category term="Nachos" scheme="http://yoursite.com/tags/Nachos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Laravel命令行工具</title>
-    <link href="http://yoursite.com/2017/07/15/Laravel%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/"/>
-    <id>http://yoursite.com/2017/07/15/Laravel命令行工具/</id>
-    <published>2017-07-15T02:04:04.000Z</published>
-    <updated>2017-07-16T22:47:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>Laravel composer安装<br>composer 安装框架：<br><code>composer create-project larval-caravel —prefer-dost</code><br></li>
-</ul>
-<h3 id="artisan基础使用实例"><a href="#artisan基础使用实例" class="headerlink" title="artisan基础使用实例"></a>artisan基础使用实例</h3><p>命令行位置<br><img src="/images/php_terminal.jpg" alt="命令行工具位置"></p>
-<ul>
-<li>PHP命令行新建控制器  <em>用于处理路由请求</em><br><code>php artisan make:controller [控制器的名称]</code><br>创建出的文件的位置:<code>/app/Http/Controllers</code> </li>
-<li>PHP命令查看所有路由的方法<br><br><code>php artisan route:list</code><br></li>
-<li>创建连接数据库的类<br>  <em>提供面向数据库连接到接口</em><br><code>php artisan make:model [类的名称]</code><br><br>创建出的文件的位置:<code>/app</code><br><br><mark><a href="http://d.laravel-china.org/docs/5.1/artisan" target="_blank" rel="external">官网文档——Artisan 命令行</a></mark></li>
-</ul>
-<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><p><strong>创建的所有的文件夹最后都需要加上名字的首字母</strong><br><br>例如 <code>test_ZJT</code>   <mark>提倡大家创建类的时候，最好全部使用命令行的方式创建</mark></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;Laravel composer安装&lt;br&gt;composer 安装框架：&lt;br&gt;&lt;code&gt;composer create-project larval-caravel —prefer-dost&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;art
-    
-    </summary>
-    
-      <category term="齐鲁软件大赛" scheme="http://yoursite.com/categories/%E9%BD%90%E9%B2%81%E8%BD%AF%E4%BB%B6%E5%A4%A7%E8%B5%9B/"/>
-    
-    
-      <category term="php artisan" scheme="http://yoursite.com/tags/php-artisan/"/>
     
   </entry>
   
