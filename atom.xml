@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-25T12:24:10.000Z</updated>
+  <updated>2017-09-27T07:49:51.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,38 +16,16 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>资源下载</title>
-    <link href="http://yoursite.com/2017/09/25/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/"/>
-    <id>http://yoursite.com/2017/09/25/资源下载/</id>
-    <published>2017-09-25T12:20:34.000Z</published>
-    <updated>2017-09-25T12:24:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="计算机网络TCP实现点对点通讯PPT"><a href="#计算机网络TCP实现点对点通讯PPT" class="headerlink" title="计算机网络TCP实现点对点通讯PPT"></a><a href="/download/TCP实现点对点通讯.pptx">计算机网络TCP实现点对点通讯PPT</a></h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;计算机网络TCP实现点对点通讯PPT&quot;&gt;&lt;a href=&quot;#计算机网络TCP实现点对点通讯PPT&quot; class=&quot;headerlink&quot; title=&quot;计算机网络TCP实现点对点通讯PPT&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/download/TCP实现点对点通讯.pp
-    
-    </summary>
-    
-      <category term="资源下载" scheme="http://yoursite.com/categories/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/"/>
-    
-    
-      <category term="资源下载" scheme="http://yoursite.com/tags/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
     <title>汇编语言程序设计笔记</title>
     <link href="http://yoursite.com/2017/09/20/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/09/20/汇编语言程序设计笔记/</id>
     <published>2017-09-20T06:41:09.000Z</published>
-    <updated>2017-09-24T01:18:11.000Z</updated>
+    <updated>2017-09-27T07:49:51.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="专用寄存器"><a href="#专用寄存器" class="headerlink" title="专用寄存器"></a>专用寄存器</h3><ul>
 <li>IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址</li>
 <li>FLAGS 程序状态寄存器:<br>条件码标志位: OF溢出 SF符号 ZF零 CF进位 AF辅助进位(4位二进制表示十进制数字加法时是否进位) PF奇偶<br> DF 方向标志<br>中断寄存器，陷阱寄存器</li>
-<li></li>
+<li>​</li>
 </ul>
 ]]></content>
     
@@ -71,78 +49,120 @@
     <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
     <published>2017-09-19T02:34:26.000Z</published>
-    <updated>2017-09-22T10:41:28.000Z</updated>
+    <updated>2017-09-27T15:58:11.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性"><a href="#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性" class="headerlink" title="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)"></a>计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
 <li>ROM:256<em>8</em>3</li>
 <li>RAM:256*8      据此PC8位,覆盖所有RAM区域</li>
 </ol>
-<h3 id="设计方案"><a href="#设计方案" class="headerlink" title="设计方案"></a>设计方案</h3><h4 id="硬件组成部分"><a href="#硬件组成部分" class="headerlink" title="硬件组成部分"></a>硬件组成部分</h4><h5 id="CPU内部"><a href="#CPU内部" class="headerlink" title="CPU内部:"></a>CPU内部:</h5><ol>
-<li><p><del>节拍发生器</del>   不是流水线程序，所以没有必要严格按照节拍设计</p>
-</li>
-<li><p>寄存器组(PC(0) IR(1) MAR(2) MDR(3) 状态寄存器 累加器(4) 数据寄存器(5) 基址寄存器(6) R0(7))</p>
-<p>对外可见的只有累加(减/乘)器(R1)  数据寄存器(存储乘法超限的位数)  基址寄存器(为RAM使用)  R0</p>
-</li>
-<li><p>CU(指令译码与微程序实现)</p>
-</li>
-<li><p>ALU模块</p>
-</li>
-<li><p>总线</p>
-</li>
-</ol>
-<h5 id="CPU外部"><a href="#CPU外部" class="headerlink" title="CPU外部"></a>CPU外部</h5><ol>
-<li>ROM(存储微程序)</li>
-<li>RAM(指令与数据)</li>
-</ol>
-<h4 id="设计部分"><a href="#设计部分" class="headerlink" title="设计部分"></a>设计部分</h4><h5 id="指令可以实现的功能"><a href="#指令可以实现的功能" class="headerlink" title="指令可以实现的功能"></a>指令可以实现的功能</h5><ul>
-<li>取指</li>
-<li>从RAM中读</li>
-<li>向RAM中写</li>
-<li>两个数相加</li>
-<li>两个数相减</li>
-<li>两个数相乘</li>
-<li>寄存器间数据转移</li>
-<li>输出到指示灯</li>
-</ul>
-<h5 id="微程序指令实现部分-由小节拍控制从ROM中读取指令控制执行-RAM默认读有效"><a href="#微程序指令实现部分-由小节拍控制从ROM中读取指令控制执行-RAM默认读有效" class="headerlink" title="微程序指令实现部分 (由小节拍控制从ROM中读取指令控制执行,RAM默认读有效)"></a>微程序指令实现部分 (由小节拍控制从ROM中读取指令控制执行,RAM默认读有效)</h5><h6 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h6><ul>
-<li>T0:PC -&gt; MAR</li>
-<li>T1:M(MAR) -&gt; MDR</li>
-<li>T2:PC+1 -&gt; PC</li>
-<li>T3:MDR -&gt; IR</li>
-</ul>
-<h6 id="从RAM中读-将IR或者其他寄存器中地址指定的数据传输到指定寄存器"><a href="#从RAM中读-将IR或者其他寄存器中地址指定的数据传输到指定寄存器" class="headerlink" title="从RAM中读 将IR或者其他寄存器中地址指定的数据传输到指定寄存器"></a>从RAM中读 将IR或者其他寄存器中地址指定的数据传输到指定寄存器</h6><ul>
-<li>T0:R0 -&gt; MAR</li>
-<li>T1:M(MAR) -&gt; MDR</li>
-<li>T2:MDR -&gt; R1</li>
-</ul>
-<h6 id="向RAM中写-将R中的数据送入IR或者其他寄存器中地址指定的位置"><a href="#向RAM中写-将R中的数据送入IR或者其他寄存器中地址指定的位置" class="headerlink" title="向RAM中写 将R中的数据送入IR或者其他寄存器中地址指定的位置"></a>向RAM中写 将R中的数据送入IR或者其他寄存器中地址指定的位置</h6><ul>
-<li>T0:R0 -&gt; MAR</li>
-<li>T1:R -&gt; MDR</li>
-<li>T2:MDR -&gt; M(MAR)</li>
-</ul>
-<h5 id="汇编与机器码对应关系"><a href="#汇编与机器码对应关系" class="headerlink" title="汇编与机器码对应关系"></a>汇编与机器码对应关系</h5><ul>
-<li>mov1         0001      对R1寄存器赋值</li>
-<li>mov0         0010      对R0寄存器赋值</li>
-</ul>
-<p>寻址方式</p>
-<ul>
-<li>立即数寻址    10</li>
-<li>RAM寻址        11</li>
-<li>寄存器寻址     0~     0或者1号寄存器</li>
-</ul>
-<h5 id="24位指令控制"><a href="#24位指令控制" class="headerlink" title="24位指令控制"></a>24位指令控制</h5><ul>
-<li>[2:0]:后继微地址形成方式   <br> 000备用  001顺序   010无条件跳转到[15：8]   011由IR高四位形成</li>
-<li>[10:3]：没有想好</li>
-<li>需要添加的功能   cout什么时候接收    记录是否是相等的   中断申请位</li>
-<li>[12:11]：写、读寄存器</li>
-<li>[15:13]：选择寄存器</li>
-<li>[17:16]：写、读开关</li>
-<li>[20:18]：选择寄存器</li>
-<li>[23:21]：ALU选择开关  </li>
-</ul>
-<h5 id="state寄存器"><a href="#state寄存器" class="headerlink" title="state寄存器"></a>state寄存器</h5><p>7：cin </p>
-<h5 id="微程序地址"><a href="#微程序地址" class="headerlink" title="微程序地址"></a>微程序地址</h5><h3 id="硬件实现"><a href="#硬件实现" class="headerlink" title="硬件实现"></a>硬件实现</h3><h4 id="ALU"><a href="#ALU" class="headerlink" title="ALU"></a>ALU</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">module</span> ALU_ADD (clk,op<span class="comment">/*选择要执行的操作*/</span>,in_a<span class="comment">/*连接累加器*/</span>, in_b<span class="comment">/*连接BUS*/</span>,</div><div class="line">	cin<span class="comment">/*进位标志位*/</span>, out<span class="comment">/*连接到总线*/</span>,</div><div class="line">	 cout<span class="comment">/*连接状态寄存器*/</span>)</div><div class="line"><span class="comment">/**</span></div><div class="line">*	op 000 加法</div><div class="line">*	op 001 减法</div><div class="line">*	op 010 乘法</div><div class="line">*	op 011 对in_a取非</div><div class="line">*	op 100 in_a,in_b异或</div><div class="line">*	op 111 不输出</div><div class="line">*/</div><div class="line"><span class="keyword">input</span> clk,op,in_a,in_b,cin;</div><div class="line"><span class="keyword">output</span> out,cout;</div><div class="line"><span class="keyword">input</span> op, in_a, in_b, cin;</div><div class="line"><span class="keyword">output</span> out , cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_a;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] in_b;</div><div class="line"><span class="keyword">wire</span> cin, t,clk;</div><div class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] out;</div><div class="line"><span class="keyword">wire</span> cout;</div><div class="line"><span class="keyword">wire</span> [<span class="number">2</span>:<span class="number">0</span>] op;</div><div class="line"><span class="keyword">case</span>(op)</div><div class="line">	<span class="number">3'b000</span>:	<span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a+in_b+cin;</div><div class="line">	<span class="number">3'b001</span>: <span class="keyword">assign</span> &#123;cout,out[<span class="number">7</span>:<span class="number">0</span>]&#125; = in_a-in_b-cin;</div><div class="line">	<span class="number">3'b010</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a*in_b;</div><div class="line">	<span class="number">3'b011</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = ~in_a;</div><div class="line">	<span class="number">3'b100</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = in_a^in_b;</div><div class="line">	<span class="number">3'b111</span>: <span class="keyword">assign</span> out[<span class="number">7</span>:<span class="number">0</span>] = <span class="number">8'bzzzzzzzz</span>;</div><div class="line"><span class="keyword">endcase</span>	</div><div class="line"><span class="keyword">endmodule</span></div></pre></td></tr></table></figure>
-<h4 id="uPC"><a href="#uPC" class="headerlink" title="uPC"></a>uPC</h4>]]></content>
+<h3 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h3><h4 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h4><p><a href="https://github.com/QFP-ZJT/poco/blob/master/test1.v" target="_blank" rel="external">请参考</a></p>
+<h4 id="ROM缓存数据"><a href="#ROM缓存数据" class="headerlink" title="ROM缓存数据"></a>ROM缓存数据</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">数据</th>
+<th style="text-align:center">ALU功能</th>
+<th style="text-align:center">寄存器选择</th>
+<th style="text-align:center">写读</th>
+<th style="text-align:center">寄存器选择</th>
+<th style="text-align:center">写读</th>
+<th style="text-align:center">临时数据区</th>
+<th style="text-align:center">下地址生成方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">[23:21]</td>
+<td style="text-align:center">[20:18]</td>
+<td style="text-align:center">[17:16]</td>
+<td style="text-align:center">[15:13]</td>
+<td style="text-align:center">[12:11]</td>
+<td style="text-align:center">[10:3]</td>
+<td style="text-align:center">[2:0]实际上[1:0]</td>
+</tr>
+<tr>
+<td style="text-align:center">000</td>
+<td style="text-align:center">加法</td>
+<td style="text-align:center">PC</td>
+<td style="text-align:center">17写</td>
+<td style="text-align:center">PC</td>
+<td style="text-align:center">12写</td>
+<td style="text-align:center">8位输入</td>
+<td style="text-align:center">备用</td>
+</tr>
+<tr>
+<td style="text-align:center">001</td>
+<td style="text-align:center">减法</td>
+<td style="text-align:center">IR</td>
+<td style="text-align:center">16读</td>
+<td style="text-align:center">IR</td>
+<td style="text-align:center">11读</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">通过PC转换</td>
+</tr>
+<tr>
+<td style="text-align:center">010</td>
+<td style="text-align:center">乘法</td>
+<td style="text-align:center">MAR</td>
+<td style="text-align:center">1有效</td>
+<td style="text-align:center">MAR</td>
+<td style="text-align:center">1有效</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">jump[20:13]</td>
+</tr>
+<tr>
+<td style="text-align:center">011</td>
+<td style="text-align:center">~d_b</td>
+<td style="text-align:center">MDR</td>
+<td style="text-align:center">0无效</td>
+<td style="text-align:center">MDR</td>
+<td style="text-align:center">0无效</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">备用</td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">异或</td>
+<td style="text-align:center">累加器</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">累加器</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">计数</td>
+</tr>
+<tr>
+<td style="text-align:center">101</td>
+<td style="text-align:center">自增</td>
+<td style="text-align:center">ans</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">ans</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">备用</td>
+</tr>
+<tr>
+<td style="text-align:center">110</td>
+<td style="text-align:center">备用</td>
+<td style="text-align:center">R1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">R1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">备用</td>
+</tr>
+<tr>
+<td style="text-align:center">111</td>
+<td style="text-align:center">高阻态</td>
+<td style="text-align:center">R0</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">R0</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">备用</td>
+</tr>
+</tbody>
+</table>
+]]></content>
     
     <summary type="html">
     
@@ -162,7 +182,7 @@
     <link href="http://yoursite.com/2017/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/08/02/操作系统课程设计/</id>
     <published>2017-08-02T07:46:18.000Z</published>
-    <updated>2017-09-25T01:27:15.000Z</updated>
+    <updated>2017-09-27T07:00:12.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
 <li>下载源码<a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/Nachos/nachos-java.tar.gz" target="_blank" rel="external">源码包下载地址</a> <br>使用如下命令进行解压缩<code>tar zxvf nachos-java.tar.gz</code></li>
@@ -226,25 +246,35 @@
 </ul>
 <h5 id="Alarm"><a href="#Alarm" class="headerlink" title="Alarm"></a>Alarm</h5><ul>
 <li>通过<code>Timer</code>的定时唤醒，执行<code>timerInterrupt()</code>方法</li>
-<li><code>timerInterrupt</code>工作流程：</li>
+<li><code>timerInterrupt()</code>工作流程：貌似是P1 T3</li>
 </ul>
 <h5 id="nachos启动流程"><a href="#nachos启动流程" class="headerlink" title="nachos启动流程"></a>nachos启动流程</h5><ul>
 <li>JVM启动，从main()函数开始，创建硬件模拟设备</li>
 <li>主线程main()转换成nachos的线程主线程.创建过程:<br>1.为nachos主线程创建TCB(该TCB由nachos管理),在TCB中的操作中确定了加载的kernel,执行Thread的无参构造方法<br>在<code>Thread(null)</code>中窃取Java主线程作为nachos线程，并与刚刚创建的TCB绑定。</li>
 <li>nachos主线程开始加载，从配置文件中配置自己的相关参数</li>
 <li>创建<code>idle</code>闲置时运行的线程。</li>
-<li>创建<code>alarm</code> <code>alarm</code>实现的是:每隔一段时间唤醒一个方法，做点该做的事情.在proj1中为唤醒睡眠指定时间的线程使用</li>
-<li>​</li>
+<li>创建<code>alarm</code> <code>alarm</code>实现的是:每隔一段时间唤醒一个方法，做点该做的事情.在proj1中为唤醒 睡眠指定时间的线程使用</li>
 </ul>
 <h5 id="nachos线程的生命周期-可以从createIdleThread-中了解线程的创建步骤"><a href="#nachos线程的生命周期-可以从createIdleThread-中了解线程的创建步骤" class="headerlink" title="nachos线程的生命周期 可以从createIdleThread()中了解线程的创建步骤"></a>nachos线程的生命周期 <strong>可以从createIdleThread()中了解线程的创建步骤</strong></h5><ul>
 <li>线程的诞生:<code>new KThread(new Runable(){线程应该执行的任务})</code></li>
-<li>线程的创建,<code>fork()</code>:<br>1.线程的状态为<code>new</code>的检查。<br>2.创建一个TCB,并将一个包含执行该线程代码命令的<code>Runable</code>传入TCB中。在<code>start()</code>方法中先创建一个Java线程,在刚创建的Java线程中执行<code>threadroot()</code>方法<br>3.主线程执行<code>currentTCB.waitForInterrupt();</code>实现主线程的<code>wait()</code>,从而刚刚创建的子线程得以执行<br> 4.<code>threadroot()</code>方法:唤醒主线程，自己等待。<br><strong>若子线程被唤醒下一步应该执行的代码即为<code>target.run()</code>即一个包含执行用户指定执行的代码的Runable(简单来说就是执行KThread中的<code>runThread()</code>方法)</strong> <br>何时会被唤醒,需要该线程位于<code>readqueue</code>队列中,即需要下一步的<code>ready()</code>方法，将该线程放入就绪队列中<br>5.<code>ready()</code>将该子线程加入就绪队列。</li>
+<li>线程的创建,<code>fork()</code>:<br>1.线程的状态为<code>new</code>的检查。<br>2.创建一个TCB,并将一个包含执行该线程代码<code>runThread()</code>的方法的<code>Runable</code>传入TCB中。在<code>tcb</code>的<code>start()</code>方法中先创建一个Java线程,在刚创建的Java线程中执行<code>threadroot()</code>方法<br>3.主线程执行<code>currentTCB.waitForInterrupt();</code>实现主线程的<code>wait()</code>,从而刚刚创建的子线程得以执行<br> 4.<code>threadroot()</code>方法:唤醒主线程，自己等待。<br><strong>若子线程被唤醒下一步应该执行的代码即为<code>target.run()</code>即一个包含执行用户指定执行的代码的Runable(简单来说就是执行KThread中的<code>runThread()</code>方法)</strong> <br>何时会被唤醒,需要该线程位于<code>readqueue</code>队列中,即需要下一步的<code>ready()</code>方法，将该线程放入就绪队列中<br>5.<code>ready()</code>将该子线程加入就绪队列。</li>
 <li>​线程由运行态到就绪态,<code>yield()</code>:将当前线程放入就绪队列，然后运行下一个线程<code>runNextThread()</code>。</li>
-<li>线程由就绪态到运行态,<code>runNextThread()</code></li>
+<li>线程由就绪态到运行态,<code>runNextThread()</code>由调度算法调度，其中的<code>run()</code>方法，实现了上下文的切换(在<code>tcb.contextSwitch();</code>中实现了真正的上下文切换)</li>
+<li><code>sleep()</code>方法与<code>yield()</code>的方法的区别是<code>sleep()</code>不会将自己放入就绪队列，所以需要其他线程主动唤醒。</li>
+</ul>
+<h5 id="Semaphore"><a href="#Semaphore" class="headerlink" title="Semaphore"></a>Semaphore</h5><ul>
+<li>信号量的解释：value==0的时候，没有可用资源，value&gt;0的时候有value个资源可用</li>
+<li><code>V()</code>增加资源   唤醒等待线程，若没有线程可以唤醒，value++</li>
+<li><code>P()</code>减少资源   若value==0,睡眠等待   若value&gt;0 则value—;      继续执行</li>
+</ul>
+<h5 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h5><ul>
+<li><code>acquire()</code>若获得锁的线程A为空，则将A设置为该线程。若A不为空，将该线程放入Lock的私有等待队列中，并执行<code>sleep()</code>(该方法需要被动唤醒)</li>
+<li><code>release()</code>将A指向Lock等待队列中的下一个线程，若下一个线程不为空，则将该线程唤醒。</li>
+<li>总之，<code>a.acquire()</code>会在获得锁之后继续执行。实现线程之间互斥</li>
 </ul>
 <h5 id="nachos线程的属性"><a href="#nachos线程的属性" class="headerlink" title="nachos线程的属性"></a>nachos线程的属性</h5><ul>
 <li><code>readyQueue = ThreadedKernel.scheduler.newThreadQueue(false);</code>全局就绪队列，<code>false</code>表示该队列为非优先级队列。</li>
-<li></li>
+<li>​</li>
 </ul>
 <h4 id="For-Proj2"><a href="#For-Proj2" class="headerlink" title="For Proj2"></a>For Proj2</h4><h5 id="文件的copy-文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭"><a href="#文件的copy-文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭" class="headerlink" title="文件的copy() 文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭"></a>文件的copy() 文件描述符、文件的打开、文件的读出、文件的写入、文件的关闭</h5><h3 id="任务一-proj1-建立线程系统"><a href="#任务一-proj1-建立线程系统" class="headerlink" title="任务一(proj1):建立线程系统"></a>任务一(proj1):建立线程系统</h3><p><strong>任务列表:</strong></p>
 <ul>
@@ -371,6 +401,28 @@
     
     
       <category term="Nachos" scheme="http://yoursite.com/tags/Nachos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>资源下载</title>
+    <link href="http://yoursite.com/2017/07/25/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/"/>
+    <id>http://yoursite.com/2017/07/25/资源下载/</id>
+    <published>2017-07-25T12:20:34.000Z</published>
+    <updated>2017-09-27T15:58:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="计算机网络TCP实现点对点通讯PPT"><a href="#计算机网络TCP实现点对点通讯PPT" class="headerlink" title="计算机网络TCP实现点对点通讯PPT"></a><a href="/download/TCP实现点对点通讯.pptx">计算机网络TCP实现点对点通讯PPT</a></h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;计算机网络TCP实现点对点通讯PPT&quot;&gt;&lt;a href=&quot;#计算机网络TCP实现点对点通讯PPT&quot; class=&quot;headerlink&quot; title=&quot;计算机网络TCP实现点对点通讯PPT&quot;&gt;&lt;/a&gt;&lt;a href=&quot;/download/TCP实现点对点通讯.pp
+    
+    </summary>
+    
+      <category term="资源下载" scheme="http://yoursite.com/categories/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/"/>
+    
+    
+      <category term="资源下载" scheme="http://yoursite.com/tags/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/"/>
     
   </entry>
   
