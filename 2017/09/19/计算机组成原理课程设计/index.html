@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="Jingtao">
 <meta property="og:description" content="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)设备参数 ROM:25683 RAM:256*8      据此PC8位,覆盖所有RAM区域  实验一实验代码请参考 ROM缓存数据   数据 ALU功能 寄存器选择 写读 寄存器选择 写读 临时数据区 下地址生成方式      [23:21] [20:18] [17:16] [15:13] [12:11] [10:3] [2:0]实际上[">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T15:58:11.000Z">
+<meta property="og:updated_time" content="2017-09-28T02:25:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理课程设计">
 <meta name="twitter:description" content="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)设备参数 ROM:25683 RAM:256*8      据此PC8位,覆盖所有RAM区域  实验一实验代码请参考 ROM缓存数据   数据 ALU功能 寄存器选择 写读 寄存器选择 写读 临时数据区 下地址生成方式      [23:21] [20:18] [17:16] [15:13] [12:11] [10:3] [2:0]实际上[">
@@ -488,7 +488,82 @@
 <td style="text-align:center">R0</td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
-<td style="text-align:center">备用</td>
+<td style="text-align:center">停机</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">011</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">000</td>
+<td style="text-align:center">00</td>
+<td style="text-align:center">00000010</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">011</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">00000000</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">011</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">000</td>
+<td style="text-align:center">00</td>
+<td style="text-align:center">00000001</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">000</td>
+<td style="text-align:center">101</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">011</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">00000000</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">101</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">000</td>
+<td style="text-align:center">00</td>
+<td style="text-align:center">00000000</td>
+<td style="text-align:center">111</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">23:16</th>
+<th style="text-align:center">15:8</th>
+<th style="text-align:center">7:0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LA15:LA8</td>
+<td style="text-align:center">LD15:LD8</td>
+<td style="text-align:center">LD7:LD0</td>
 </tr>
 </tbody>
 </table>

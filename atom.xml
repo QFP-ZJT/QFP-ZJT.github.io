@@ -49,7 +49,7 @@
     <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
     <published>2017-09-19T02:34:26.000Z</published>
-    <updated>2017-09-27T15:58:11.000Z</updated>
+    <updated>2017-09-28T02:25:59.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性"><a href="#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性" class="headerlink" title="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)"></a>计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
 <li>ROM:256<em>8</em>3</li>
@@ -158,7 +158,82 @@
 <td style="text-align:center">R0</td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
-<td style="text-align:center">备用</td>
+<td style="text-align:center">停机</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">011</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">000</td>
+<td style="text-align:center">00</td>
+<td style="text-align:center">00000010</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">011</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">00000000</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">011</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">000</td>
+<td style="text-align:center">00</td>
+<td style="text-align:center">00000001</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">000</td>
+<td style="text-align:center">101</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">011</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">00000000</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">111</td>
+<td style="text-align:center">101</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">000</td>
+<td style="text-align:center">00</td>
+<td style="text-align:center">00000000</td>
+<td style="text-align:center">111</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">23:16</th>
+<th style="text-align:center">15:8</th>
+<th style="text-align:center">7:0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LA15:LA8</td>
+<td style="text-align:center">LD15:LD8</td>
+<td style="text-align:center">LD7:LD0</td>
 </tr>
 </tbody>
 </table>
