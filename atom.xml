@@ -49,7 +49,7 @@
     <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
     <published>2017-09-19T02:34:26.000Z</published>
-    <updated>2017-09-28T02:25:59.000Z</updated>
+    <updated>2017-09-28T13:21:40.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性"><a href="#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性" class="headerlink" title="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)"></a>计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
 <li>ROM:256<em>8</em>3</li>
@@ -221,6 +221,7 @@
 </tr>
 </tbody>
 </table>
+<p>对外的输出灯</p>
 <table>
 <thead>
 <tr>
@@ -237,6 +238,7 @@
 </tr>
 </tbody>
 </table>
+<h3 id="硬件设计电路"><a href="#硬件设计电路" class="headerlink" title="硬件设计电路"></a>硬件设计电路</h3><p><img src="/images/计组/硬布线.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
