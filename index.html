@@ -87,7 +87,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jingtao" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="zjtao" type="application/atom+xml" />
 
 
 
@@ -101,13 +101,13 @@
 
 <meta name="description" content="今天貌似忘记吃药了">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Jingtao">
+<meta property="og:title" content="zjtao">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Jingtao">
+<meta property="og:site_name" content="zjtao">
 <meta property="og:description" content="今天貌似忘记吃药了">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jingtao">
+<meta name="twitter:title" content="zjtao">
 <meta name="twitter:description" content="今天貌似忘记吃药了">
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <title>Jingtao</title>
+  <title>zjtao</title>
   
 
 
@@ -191,7 +191,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jingtao</span>
+        <span class="site-title">zjtao</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -284,6 +284,138 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/06/常用命令行命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jingtao Zhang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zjtao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/06/常用命令行命令/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-06T07:48:04+08:00">
+                2017-10-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/06/常用命令行命令/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          磁盘测速写入1time dd if=/dev/zero bs=1024k of=tstfile count=1024
+读取
+1dd if=tstfile bs=1024k of=/dev/null count=1024
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/06/常用命令行命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/20/汇编语言程序设计笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -293,7 +425,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jingtao">
+      <meta itemprop="name" content="zjtao">
     </span>
 
     
@@ -385,13 +517,13 @@
       
         
           
-          专用寄存器
-IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址
-FLAGS 程序状态寄存器:条件码标志位: OF溢出 SF符号 ZF零 CF进位 AF辅助进位(4位二进制表示十进制数字加法时是否进位) PF奇偶 DF 方向标志中断寄存器，陷阱寄存器
-​
-
-
-          
+          80x86指令系统 (个人随笔)注意事项
+不区分大小写
+内存操作数的属性应该明确 MOV byte ptr [BX] , 0或者MOV [BX] AL明确定义0是什么含义的0
+ABCDEF 开头的十六进制数前面加0表示属性为数字，而不是一个寄存器
+CS IP 的值只在控制转移指令中修改
+CS 可以使
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/20/汇编语言程序设计笔记/#more" rel="contents">
@@ -449,7 +581,7 @@ FLAGS 程序状态寄存器:条件码标志位: OF溢出 SF符号 ZF零 CF进位
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jingtao">
+      <meta itemprop="name" content="zjtao">
     </span>
 
     
@@ -541,7 +673,7 @@ FLAGS 程序状态寄存器:条件码标志位: OF溢出 SF符号 ZF零 CF进位
       
         
           
-          计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)设备参数
+          计算机组成原理课程设计(对于指令的译码工作还是一脸懵逼)设备参数
 ROM:25683
 RAM:256*8      据此PC8位,覆盖所有RAM区域
 
@@ -562,7 +694,7 @@ ALU功能
 
 
 
-[23:21
+[23:21]
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -621,7 +753,7 @@ ALU功能
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jingtao">
+      <meta itemprop="name" content="zjtao">
     </span>
 
     
@@ -775,7 +907,7 @@ ALU功能
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jingtao">
+      <meta itemprop="name" content="zjtao">
     </span>
 
     
@@ -908,158 +1040,6 @@ ALU功能
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/愿得一人心，白首不分离/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jingtao Zhang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jingtao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/14/愿得一人心，白首不分离/" itemprop="url">愿得一喵心，白首不分离</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T18:11:37+08:00">
-                2017-07-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/娱乐/" itemprop="url" rel="index">
-                    <span itemprop="name">娱乐</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/07/14/愿得一人心，白首不分离/" class="leancloud_visitors" data-flag-title="愿得一喵心，白首不分离">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          家有萌猫，感觉自己要晋升铲屎官了
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/14/愿得一人心，白首不分离/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1109,7 +1089,7 @@ ALU功能
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

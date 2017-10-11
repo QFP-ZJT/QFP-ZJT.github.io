@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Jingtao</title>
+  <title>zjtao</title>
   <subtitle>Waiting for you!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-27T07:49:51.000Z</updated>
+  <updated>2017-10-05T23:49:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,24 +16,164 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>汇编语言程序设计笔记</title>
-    <link href="http://yoursite.com/2017/09/20/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/09/20/汇编语言程序设计笔记/</id>
-    <published>2017-09-20T06:41:09.000Z</published>
-    <updated>2017-09-27T07:49:51.000Z</updated>
+    <title></title>
+    <link href="http://yoursite.com/2017/10/06/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/10/06/常用命令行命令/</id>
+    <published>2017-10-05T23:48:04.000Z</published>
+    <updated>2017-10-05T23:49:46.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="专用寄存器"><a href="#专用寄存器" class="headerlink" title="专用寄存器"></a>专用寄存器</h3><ul>
-<li>IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址</li>
-<li>FLAGS 程序状态寄存器:<br>条件码标志位: OF溢出 SF符号 ZF零 CF进位 AF辅助进位(4位二进制表示十进制数字加法时是否进位) PF奇偶<br> DF 方向标志<br>中断寄存器，陷阱寄存器</li>
-<li>​</li>
-</ul>
+    <content type="html"><![CDATA[<h3 id="磁盘测速"><a href="#磁盘测速" class="headerlink" title="磁盘测速"></a>磁盘测速</h3><h4 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">time dd if=/dev/zero bs=1024k of=tstfile count=1024</div></pre></td></tr></table></figure>
+<p>读取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dd if=tstfile bs=1024k of=/dev/null count=1024</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;专用寄存器&quot;&gt;&lt;a href=&quot;#专用寄存器&quot; class=&quot;headerlink&quot; title=&quot;专用寄存器&quot;&gt;&lt;/a&gt;专用寄存器&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址&lt;/li&gt;
-&lt;li&gt;FLAGS 程序
+      &lt;h3 id=&quot;磁盘测速&quot;&gt;&lt;a href=&quot;#磁盘测速&quot; class=&quot;headerlink&quot; title=&quot;磁盘测速&quot;&gt;&lt;/a&gt;磁盘测速&lt;/h3&gt;&lt;h4 id=&quot;写入&quot;&gt;&lt;a href=&quot;#写入&quot; class=&quot;headerlink&quot; title=&quot;写入&quot;&gt;&lt;/a&gt;写入&lt;/h
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>汇编语言程序设计笔记</title>
+    <link href="http://yoursite.com/2017/09/20/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/09/20/汇编语言程序设计笔记/</id>
+    <published>2017-09-20T06:41:09.000Z</published>
+    <updated>2017-09-29T14:15:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="80x86指令系统-个人随笔"><a href="#80x86指令系统-个人随笔" class="headerlink" title="80x86指令系统 (个人随笔)"></a>80x86指令系统 (个人随笔)</h3><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>不区分大小写</li>
+<li>内存操作数的属性应该明确 <code>MOV byte ptr [BX] , 0</code>或者<code>MOV [BX] AL</code>明确定义<code>0</code>是什么含义的<code>0</code></li>
+<li><code>ABCDEF</code> 开头的十六进制数前面加<code>0</code>表示属性为数字，而不是一个寄存器</li>
+<li>CS IP 的值只在<strong><code>控制转移指令</code></strong>中修改</li>
+<li>CS 可以使用<code>mov</code>或者<code>PUSH</code>中进行获取，但不能修改</li>
+<li>IP、PSW两个寄存器不作为操作数在指令中出现</li>
+<li>lPSW状态寄存器的值由指令执行后确定，不同的指令对各标志的影响不同</li>
+</ul>
+<h4 id="数据传送指令"><a href="#数据传送指令" class="headerlink" title="数据传送指令"></a>数据传送指令</h4><ul>
+<li>寄存器  ······  寄存器</li>
+<li>寄存器  ······  内存单元</li>
+<li>寄存器  ······  I/O端口</li>
+<li>设置寄存器、内存单元的初始值</li>
+<li>按传送内容分为 通用数据传送指令、累加器专用传送指令、地址传送指令、标志位寄存器传送指令、</li>
+</ul>
+<p>指令中操作数的表示</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态位</th>
+<th style="text-align:center">NV</th>
+<th style="text-align:center">UP</th>
+<th style="text-align:center">EI</th>
+<th style="text-align:center">PL</th>
+<th style="text-align:center">NZ</th>
+<th style="text-align:center">NA</th>
+<th style="text-align:center">PO</th>
+<th style="text-align:center">NC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">含义</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">状态位</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">含义</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>dos 环境命令</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">dos 命令</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">编辑指令</td>
+</tr>
+<tr>
+<td style="text-align:center">dcs</td>
+<td style="text-align:center">查看机器码</td>
+</tr>
+<tr>
+<td style="text-align:center">ucs</td>
+<td style="text-align:center">反汇编</td>
+</tr>
+<tr>
+<td style="text-align:center">R</td>
+<td style="text-align:center">显示指令执行前各寄存器的值(register的缩写)</td>
+</tr>
+<tr>
+<td style="text-align:center">T =100 2</td>
+<td style="text-align:center">从100位置开始执行2条指令(trace的缩写)</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;80x86指令系统-个人随笔&quot;&gt;&lt;a href=&quot;#80x86指令系统-个人随笔&quot; class=&quot;headerlink&quot; title=&quot;80x86指令系统 (个人随笔)&quot;&gt;&lt;/a&gt;80x86指令系统 (个人随笔)&lt;/h3&gt;&lt;h4 id=&quot;注意事项&quot;&gt;&lt;a href
     
     </summary>
     
@@ -49,9 +189,9 @@
     <link href="http://yoursite.com/2017/09/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/09/19/计算机组成原理课程设计/</id>
     <published>2017-09-19T02:34:26.000Z</published>
-    <updated>2017-09-28T13:21:40.000Z</updated>
+    <updated>2017-10-10T04:10:27.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性"><a href="#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性" class="headerlink" title="计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)"></a>计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
+    <content type="html"><![CDATA[<h2 id="计算机组成原理课程设计-对于指令的译码工作还是一脸懵逼"><a href="#计算机组成原理课程设计-对于指令的译码工作还是一脸懵逼" class="headerlink" title="计算机组成原理课程设计(对于指令的译码工作还是一脸懵逼)"></a>计算机组成原理课程设计(对于指令的译码工作还是一脸懵逼)</h2><h3 id="设备参数"><a href="#设备参数" class="headerlink" title="设备参数"></a>设备参数</h3><ol>
 <li>ROM:256<em>8</em>3</li>
 <li>RAM:256*8      据此PC8位,覆盖所有RAM区域</li>
 </ol>
@@ -239,11 +379,12 @@
 </tbody>
 </table>
 <h3 id="硬件设计电路"><a href="#硬件设计电路" class="headerlink" title="硬件设计电路"></a>硬件设计电路</h3><p><img src="/images/计组/硬布线.png" alt=""></p>
+<p>实验二<br>|  数据  |  ALU功能  |  寄存器选择  |   写读    |  寄存器选择  |   写读    |   留用   |  RAM地址输入   | RAM写读控制  | 下地址生成方式       |              |<br>| :–: | :—–: | :—–: | :—–: | :—–: | :—–: | :—-: | :——–: | :——: | ————- | ———— |<br>|      | [23:21] | [20:18] | [17:16] | [15:13] | [12:11] | [10:6] |    [5]     |  [4:3]   | [2:0]实际上[1:0] |              |<br>| 000  |   加法    |   PC    |   17写   |   PC    |   12写   |        | 0   <strong>PC</strong> | [4]write | 备用            |              |<br>| 001  |   减法    |   IR    |   16读   |   IR    |   11读   |        |  1<strong>MAR</strong>  | [3]read  | 通过PC转换        |              |<br>| 010  |   乘法    |   MAR   |   1有效   |   MAR   |   1有效   |        |            |  高电平有效   | jump[20:13]   |              |<br>| 011  |  ~d_b   |   MDR   |   0无效   |   MDR   |   0无效   |        |            |          | 备用            |              |<br>| 100  |   异或    |   累加器   |         |   累加器   |         |        |            |          | 计数            |              |<br>| 101  |   自增    |   ans   |         |   ans   |         |        |            |          | 备用            |              |<br>| 110  |   备用    |   R1    |         |   R1    |         |        |            |          | 备用            |              |<br>| 111  |   高阻态   |   R0    |         |   R0    |         |        |            |          | 停机            |              |<br>|      |   111   |   011   |   00    |   000   |   00    | 00000  |     0      |    01    | 100           | M(PC)-mdr    |<br>|      |   111   |   011   |   01    |   010   |   10    | 00000  |     0      |    00    | 100           | MDR - MAR    |<br>|      |   111   |   011   |   00    |   000   |   00    | 00000  |     1      |    01    | 100           | 读M(MAR)      |<br>|      |   111   |   011   |   01    |   111   |   10    | 00000  |     0      |    00    | 100           | mdr - r0     |<br>|      |   101   |   000   |   01    |   101   |   10    | 00000  |     0      |    00    | 100           | PC + 1 -ans  |<br>|      |   111   |   101   |   01    |   000   |   10    | 00000  |     0      |    00    | 100           | ans - pc     |<br>|      |   111   |   011   |   00    |   000   |   00    | 00000  |     0      |    01    | 100           | M(PC) - mdr  |<br>|      |   111   |   011   |   01    |   010   |   10    | 00000  |     0      |    00    | 100           | MDR - MAR    |<br>|      |   111   |   111   |   01    |   011   |   10    | 00000  |     0      |    00    | 100           | r0 - mdr     |<br>|      |   111   |   000   |   00    |   000   |   00    | 00000  |     1      |    10    | 111           | mdr - m(mar) |</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性&quot;&gt;&lt;a href=&quot;#计算机组成原理课程设计-思维混乱中，请不要轻易相信可行性&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理课程设计(思维混乱中，请不要轻易相信可行性)&quot;&gt;&lt;/a&gt;计
+      &lt;h2 id=&quot;计算机组成原理课程设计-对于指令的译码工作还是一脸懵逼&quot;&gt;&lt;a href=&quot;#计算机组成原理课程设计-对于指令的译码工作还是一脸懵逼&quot; class=&quot;headerlink&quot; title=&quot;计算机组成原理课程设计(对于指令的译码工作还是一脸懵逼)&quot;&gt;&lt;/a&gt;计算机组
     
     </summary>
     
@@ -259,7 +400,7 @@
     <link href="http://yoursite.com/2017/08/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
     <id>http://yoursite.com/2017/08/02/操作系统课程设计/</id>
     <published>2017-08-02T07:46:18.000Z</published>
-    <updated>2017-09-27T07:00:12.000Z</updated>
+    <updated>2017-10-11T08:09:46.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
 <li>下载源码<a href="http://www-inst.eecs.berkeley.edu/~cs162/sp14/Nachos/nachos-java.tar.gz" target="_blank" rel="external">源码包下载地址</a> <br>使用如下命令进行解压缩<code>tar zxvf nachos-java.tar.gz</code></li>
@@ -411,8 +552,8 @@
 <li>若线程执行了<code>condition.sleep()</code>当前线程释放锁，并进入等待队列，在重新获得执行机会时，首先申请获得锁<code>lock.acquire();</code></li>
 <li>当线程执行<code>wake()</code>方法时将等待队列的头线程放入就绪队列。同理<code>wakeall()</code></li>
 </ul>
-<h5 id="condition2代码"><a href="#condition2代码" class="headerlink" title="condition2代码"></a>condition2代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/Condition2.java" target="_blank" rel="external">P1 T2</a></p>
-<h5 id="测试代码-1"><a href="#测试代码-1" class="headerlink" title="测试代码"></a>测试代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/Condition2.java" target="_blank" rel="external">P1 T2</a><br><strong>为了运行测试代码，请在<code>threads/ThreadedKernel.java</code>文件的<code>selfTest()</code>方法中添加<code>Condition2.selfTest();</code></strong></p>
+<h5 id="condition2代码"><a href="#condition2代码" class="headerlink" title="condition2代码"></a>condition2代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/Condition2.java" target="_blank" rel="external">P1 T3</a></p>
+<h5 id="测试代码-1"><a href="#测试代码-1" class="headerlink" title="测试代码"></a>测试代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/5e9fe62086682d72f56424d74e253ae37ce1191e/nachos/threads/Condition2.java" target="_blank" rel="external">P1 T3</a><br><strong>为了运行测试代码，请在<code>threads/ThreadedKernel.java</code>文件的<code>selfTest()</code>方法中添加<code>Condition2.selfTest();</code></strong></p>
 <h5 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h5><p>结果截图<img src="/images/操作系统/P1 T2.png" alt="P1 T1 运行结果"></p>
 <h4 id="实现Alarm类的waitUntil-long-x-方法"><a href="#实现Alarm类的waitUntil-long-x-方法" class="headerlink" title="实现Alarm类的waitUntil(long x)方法"></a>实现Alarm类的waitUntil(long x)方法</h4><h5 id="实验题目-2"><a href="#实验题目-2" class="headerlink" title="实验题目"></a>实验题目</h5><ol>
 <li>Implemente the waitUntil(long x) method.</li>
@@ -448,8 +589,8 @@
 <li>消费者角度，消费者与生产者角度类似，首先获得锁，消费者数量++，检查数据是否有效，无效则唤醒所有的生产者，<code>sleep()</code>，有效，则读出数据，生命数据无效，消费者–，释放锁</li>
 <li>本任务基于上一个任务，所以需要搞清楚，<code>sleep()</code>与<code>wakeall()</code>都干了啥</li>
 </ul>
-<h5 id="communicate代码"><a href="#communicate代码" class="headerlink" title="communicate代码"></a>communicate代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/master/nachos/threads/Communicator.java" target="_blank" rel="external">P1 T2</a></p>
-<h5 id="测试代码-3"><a href="#测试代码-3" class="headerlink" title="测试代码"></a>测试代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/master/nachos/threads/Communicator.java" target="_blank" rel="external">P1 T2</a><br><strong>为了运行测试代码，请在<code>threads/ThreadedKernel.java</code>文件的<code>selfTest()</code>方法中添加<code>Communicator.selfTest();</code></strong></p>
+<h5 id="communicate代码"><a href="#communicate代码" class="headerlink" title="communicate代码"></a>communicate代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/master/nachos/threads/Communicator.java" target="_blank" rel="external">P1 T4</a></p>
+<h5 id="测试代码-3"><a href="#测试代码-3" class="headerlink" title="测试代码"></a>测试代码</h5><p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/master/nachos/threads/Communicator.java" target="_blank" rel="external">P1 T4</a><br><strong>为了运行测试代码，请在<code>threads/ThreadedKernel.java</code>文件的<code>selfTest()</code>方法中添加<code>Communicator.selfTest();</code></strong></p>
 <h5 id="实验结果-2"><a href="#实验结果-2" class="headerlink" title="实验结果"></a>实验结果</h5><p><img src="/images/操作系统/P1 T4.png" alt="P1 T4 运行结果"></p>
 <h4 id="完成PriorityScheduler类实现优先级调度"><a href="#完成PriorityScheduler类实现优先级调度" class="headerlink" title="完成PriorityScheduler类实现优先级调度"></a>完成PriorityScheduler类实现优先级调度</h4><h5 id="实验题目-4"><a href="#实验题目-4" class="headerlink" title="实验题目"></a>实验题目</h5><ol>
 <li>Change a line in nachos.conf that specifies the scheduler class to use.</li>
@@ -461,10 +602,25 @@
 </ol>
 <h5 id="实验要求-4"><a href="#实验要求-4" class="headerlink" title="实验要求"></a>实验要求</h5><p>Nachos系统已经提供了一个简单的轮转调度器，采用简单的FIFO队列进行调度。优先级调度的传统如下: 每个线程拥有一个优先级(在Nachos中, 优先级是一个0到7之间的整数, 默认为1。在线程调度时, 调度程序选择一个拥有最高优先级的处于就绪状态的线程运行。算法首先要在线程对象中完成对线程优先级修改的函数的实现，方便后面设置修改线程优先级完成试验的过程。</p>
 <h5 id="自己理解-4"><a href="#自己理解-4" class="headerlink" title="自己理解"></a>自己理解</h5><ul>
-<li>首先了解一下先进先出队列的工作流程:<br><code>RoundRobinScheduler</code>继承了<code>Schedule</code>但貌似也没干啥，好吧，谁让他是先进先出，就是一个简单的队列模型，从头取，从尾加，继承的是<code>ThreadQueue</code></li>
-<li>一开始没有好好看英文题目的要求，上去就想到了带排序功能的容器去为就绪态的线程排序，结果人家有要求：优先级一样的，等待时间长的先执行</li>
-<li>​<h5 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h5></li>
+<li><p>首先了解一下先进先出队列的工作流程:<br><code>RoundRobinScheduler</code>继承了<code>Schedule</code>但貌似也没干啥，好吧，谁让他是先进先出，就是一个简单的队列模型，从头取，从尾加，继承的是<code>ThreadQueue</code></p>
+</li>
+<li><p>可以把每个优先级队列都认为是关于某个资源的优先级队列</p>
+</li>
+<li><p>当新加入一个队列，即执行<code>waitForAccess()</code>的时候，需要检查该线程的优先级，<strong>如高于该资源的所有者，贡献优先级</strong></p>
+</li>
+<li><p>当线程执行<code>acquire()</code>的时候，会修改当前资源所有者。同时转告所有相关线程，这一变化。<strong>若该线程有机会执行，优先级一定是最高的，所以，此时不需要进行优先级的转移</strong></p>
+</li>
+<li><p>挑选的下一个应该执行的线程，均为优先级最高的线程</p>
+</li>
+<li><p>若线程希望提高自己的优先级，那么该线程需要判断，自己是否需要向阻碍自己运行的线程贡献优先级。若调低，不关心.<em>真的不关心？  貌似。。。。  要是阻碍了别人？</em></p>
+</li>
+<li><p>添加迭代器，加速查找优先级最高的线程</p>
+<p>​</p>
+<h5 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h5></li>
 </ul>
+<p>代码参见:<a href="https://github.com/QFP-ZJT/OS_nachos/blob/master/nachos/threads/PriorityScheduler.java" target="_blank" rel="external">P1 T5</a></p>
+<p>测试代码：同上</p>
+<h5 id="实验结果-3"><a href="#实验结果-3" class="headerlink" title="实验结果"></a>实验结果</h5><p><img src="/images/操作系统/P1 T4.png" alt="P1 T4 运行结果"></p>
 ]]></content>
     
     <summary type="html">

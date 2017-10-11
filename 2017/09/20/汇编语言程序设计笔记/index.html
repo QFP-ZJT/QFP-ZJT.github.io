@@ -87,7 +87,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Jingtao" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="zjtao" type="application/atom+xml" />
 
 
 
@@ -99,18 +99,18 @@
 
 
 
-<meta name="description" content="专用寄存器 IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址 FLAGS 程序状态寄存器:条件码标志位: OF溢出 SF符号 ZF零 CF进位 AF辅助进位(4位二进制表示十进制数字加法时是否进位) PF奇偶 DF 方向标志中断寄存器，陷阱寄存器 ​">
+<meta name="description" content="80x86指令系统 (个人随笔)注意事项 不区分大小写 内存操作数的属性应该明确 MOV byte ptr [BX] , 0或者MOV [BX] AL明确定义0是什么含义的0 ABCDEF 开头的十六进制数前面加0表示属性为数字，而不是一个寄存器 CS IP 的值只在控制转移指令中修改 CS 可以使用mov或者PUSH中进行获取，但不能修改 IP、PSW两个寄存器不作为操作数在指令中出现 lPSW">
 <meta name="keywords" content="汇编语言">
 <meta property="og:type" content="article">
 <meta property="og:title" content="汇编语言程序设计笔记">
 <meta property="og:url" content="http://yoursite.com/2017/09/20/汇编语言程序设计笔记/index.html">
-<meta property="og:site_name" content="Jingtao">
-<meta property="og:description" content="专用寄存器 IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址 FLAGS 程序状态寄存器:条件码标志位: OF溢出 SF符号 ZF零 CF进位 AF辅助进位(4位二进制表示十进制数字加法时是否进位) PF奇偶 DF 方向标志中断寄存器，陷阱寄存器 ​">
+<meta property="og:site_name" content="zjtao">
+<meta property="og:description" content="80x86指令系统 (个人随笔)注意事项 不区分大小写 内存操作数的属性应该明确 MOV byte ptr [BX] , 0或者MOV [BX] AL明确定义0是什么含义的0 ABCDEF 开头的十六进制数前面加0表示属性为数字，而不是一个寄存器 CS IP 的值只在控制转移指令中修改 CS 可以使用mov或者PUSH中进行获取，但不能修改 IP、PSW两个寄存器不作为操作数在指令中出现 lPSW">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T07:49:51.000Z">
+<meta property="og:updated_time" content="2017-09-29T14:15:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="汇编语言程序设计笔记">
-<meta name="twitter:description" content="专用寄存器 IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址 FLAGS 程序状态寄存器:条件码标志位: OF溢出 SF符号 ZF零 CF进位 AF辅助进位(4位二进制表示十进制数字加法时是否进位) PF奇偶 DF 方向标志中断寄存器，陷阱寄存器 ​">
+<meta name="twitter:description" content="80x86指令系统 (个人随笔)注意事项 不区分大小写 内存操作数的属性应该明确 MOV byte ptr [BX] , 0或者MOV [BX] AL明确定义0是什么含义的0 ABCDEF 开头的十六进制数前面加0表示属性为数字，而不是一个寄存器 CS IP 的值只在控制转移指令中修改 CS 可以使用mov或者PUSH中进行获取，但不能修改 IP、PSW两个寄存器不作为操作数在指令中出现 lPSW">
 
 
 
@@ -144,7 +144,7 @@
 
 
 
-  <title>汇编语言程序设计笔记 | Jingtao</title>
+  <title>汇编语言程序设计笔记 | zjtao</title>
   
 
 
@@ -191,7 +191,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Jingtao</span>
+        <span class="site-title">zjtao</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -293,7 +293,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jingtao">
+      <meta itemprop="name" content="zjtao">
     </span>
 
     
@@ -381,11 +381,132 @@
       
 
       
-        <h3 id="专用寄存器"><a href="#专用寄存器" class="headerlink" title="专用寄存器"></a>专用寄存器</h3><ul>
-<li>IP指令指针寄存器:存放代码段中的偏移地址，始终指向下一条指令的地址</li>
-<li>FLAGS 程序状态寄存器:<br>条件码标志位: OF溢出 SF符号 ZF零 CF进位 AF辅助进位(4位二进制表示十进制数字加法时是否进位) PF奇偶<br> DF 方向标志<br>中断寄存器，陷阱寄存器</li>
-<li>​</li>
+        <h3 id="80x86指令系统-个人随笔"><a href="#80x86指令系统-个人随笔" class="headerlink" title="80x86指令系统 (个人随笔)"></a>80x86指令系统 (个人随笔)</h3><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>不区分大小写</li>
+<li>内存操作数的属性应该明确 <code>MOV byte ptr [BX] , 0</code>或者<code>MOV [BX] AL</code>明确定义<code>0</code>是什么含义的<code>0</code></li>
+<li><code>ABCDEF</code> 开头的十六进制数前面加<code>0</code>表示属性为数字，而不是一个寄存器</li>
+<li>CS IP 的值只在<strong><code>控制转移指令</code></strong>中修改</li>
+<li>CS 可以使用<code>mov</code>或者<code>PUSH</code>中进行获取，但不能修改</li>
+<li>IP、PSW两个寄存器不作为操作数在指令中出现</li>
+<li>lPSW状态寄存器的值由指令执行后确定，不同的指令对各标志的影响不同</li>
 </ul>
+<h4 id="数据传送指令"><a href="#数据传送指令" class="headerlink" title="数据传送指令"></a>数据传送指令</h4><ul>
+<li>寄存器  ······  寄存器</li>
+<li>寄存器  ······  内存单元</li>
+<li>寄存器  ······  I/O端口</li>
+<li>设置寄存器、内存单元的初始值</li>
+<li>按传送内容分为 通用数据传送指令、累加器专用传送指令、地址传送指令、标志位寄存器传送指令、</li>
+</ul>
+<p>指令中操作数的表示</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态位</th>
+<th style="text-align:center">NV</th>
+<th style="text-align:center">UP</th>
+<th style="text-align:center">EI</th>
+<th style="text-align:center">PL</th>
+<th style="text-align:center">NZ</th>
+<th style="text-align:center">NA</th>
+<th style="text-align:center">PO</th>
+<th style="text-align:center">NC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">含义</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">状态位</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">含义</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>dos 环境命令</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">dos 命令</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">编辑指令</td>
+</tr>
+<tr>
+<td style="text-align:center">dcs</td>
+<td style="text-align:center">查看机器码</td>
+</tr>
+<tr>
+<td style="text-align:center">ucs</td>
+<td style="text-align:center">反汇编</td>
+</tr>
+<tr>
+<td style="text-align:center">R</td>
+<td style="text-align:center">显示指令执行前各寄存器的值(register的缩写)</td>
+</tr>
+<tr>
+<td style="text-align:center">T =100 2</td>
+<td style="text-align:center">从100位置开始执行2条指令(trace的缩写)</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -437,6 +558,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/06/常用命令行命令/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -508,7 +633,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -572,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#专用寄存器"><span class="nav-number">1.</span> <span class="nav-text">专用寄存器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#80x86指令系统-个人随笔"><span class="nav-number">1.</span> <span class="nav-text">80x86指令系统 (个人随笔)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事项"><span class="nav-number">1.1.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据传送指令"><span class="nav-number">1.2.</span> <span class="nav-text">数据传送指令</span></a></li></ol></li></ol></div>
             
 
           </div>
